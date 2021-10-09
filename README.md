@@ -5,6 +5,7 @@
 ## Application Bokeh de visualisation (Programmation Python)
 
 Réalisation d’une application bokeh de visualisation sur les données des Jeux-Olympiques.
+<br>
 *voir le dossier bokeh_visualisation*
 
 ## Application web avec le package Shiny de RStudio (Logiciel RStudio)
