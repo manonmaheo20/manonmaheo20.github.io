@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+
+        <title>Parcs-relais</title>	
+
+<!-- Liens entête carte parking -->
+    
+    	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    	<script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    	<link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    	<style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    	<style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <style>
+            #map_d67336fb9ca04fc9b31b9cc79b225072 {
+                position: relative;
+                width: 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+            }
+        </style>
+
+<!-- Nos propres liens -->
+
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/style2.css">    
+        <link rel="stylesheet" href="../css/grille2.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    </head>
+
+
+    <body>
+
+<!-- PARTIE LOGO -->
+
+		<header> 
+
+			<img src="../images/logostar.png" alt="Logo de la STAR" width="100%" height="100%" />
+
+        </header>
+
+<!-- PARTIE MENU -->
+
+        <nav>
+
+            <ul>
+                
+                <li><a href="../index.html">ACCUEIL</a>
+
+                <li><a href="#">METRO</a>
+
+                    <ul>
+                        <li><a href="page_metro_carte.html">État des stations métro</a></li>
+                    </ul>
+
+                </li>
+
+                <li><a href="#">BUS</a>
+        
+                    <ul>
+                        <li><a href="page_bus_carte.html">État des stations bus</a></li>
+                    </ul>
+
+                </li>
+
+                
+                <li><a href="#">VELO</a>
+        
+                    <ul>
+                        <li><a href="page_velos_carte.html">État des stations vélos</a></li>
+                        <li><a href="page_velos_pyramide.html">Vélos et emplacements</a></li>
+                    </ul>
+
+                </li>
+
+
+                <li><a href="#">PARCS-RELAIS</a>
+
+                    <ul>
+                        <li><a href="page_parking_carte.html">État des parcs-relais</a></li>
+                        <li><a href="page_parking_graphique.html">Capacité des parcs-relais</a></li>
+                    </ul>
+                    
+                </li>
+
+            </ul>
+
+        </nav>
+
+<!-- PARTIE PRESENTATION PARKING RENNES -->
+
+		<article>
+
+<!--            BLOC INFORMATIONS -->
+
+			<h2> Informations sur les parcs-relais </h2>
+
+            <div id = "informations">
+
+			<h3>Horaires</h3>
+
+			<ul>
+                <li style="color: #008383;">Du lundi au mercredi : de 5h à 1h</li><br>
+				<li style="color: #008383;">Du jeudi au samedi : de 5h à 2h</li><br>
+				<li style="color: #008383;">En période estivale : de 5h à 1h</li><br>
+				<li style="color: #008383;">Fermeture : dimanche et jours fériés (sauf ouverture exceptionnelle certains dimanches)</li>
+            </ul><br>
+					
+			<h3>L'entrée est libre et la sortie contrôlée.</h3><br>
+
+			<p>Pour quitter le parc-relais, vous devez être muni d’un titre de transport STAR validé dans le bus ou le métro, dans l’heure.</p>
+			<p>Des contrôles sont effectués à la sortie des parking.</p>
+
+            </div>
+
+<!--            BLOC CARTOGRAPHIE -->
+
+			<h2>État des parcs-relais en temps réel</h2>
+
+			<div class="folium-map" id="map_d67336fb9ca04fc9b31b9cc79b225072" ></div>
+
+		</article>
+
+    </body>
+
+<script>    
+    
+            var map_d67336fb9ca04fc9b31b9cc79b225072 = L.map(
+                "map_d67336fb9ca04fc9b31b9cc79b225072",
+                {
+                    center: [48.0833, -1.6833],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5944f3d45a02460eaebf751236c27dac = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_d67336fb9ca04fc9b31b9cc79b225072);
+        
+    
+            var marker_75c85c7001da48948b1ed578e9033bee = L.marker(
+                [48.1210803663, -1.7136311256],
+                {}
+            ).addTo(map_d67336fb9ca04fc9b31b9cc79b225072);
+        
+    
+        var custom_icon_4bb11a34dde54fd88db1a3e272e3012c = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_75c85c7001da48948b1ed578e9033bee.setIcon(custom_icon_4bb11a34dde54fd88db1a3e272e3012c);
+        
+    
+        var popup_2fa5cda05adc4f01ac7441f6d3cdb53c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_55c5b0faa7e647568b98abc6a955962c = $(`<div id="html_55c5b0faa7e647568b98abc6a955962c" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>J.F. Kennedy</h3></p><p><h5>Informations : </h5></p><p>Boulevard d'Anjou</p><p><i>Places disponibles : </i>311</p><p> <i>Places disponibles (PMR) : </i>9</p></div>`)[0];
+            popup_2fa5cda05adc4f01ac7441f6d3cdb53c.setContent(html_55c5b0faa7e647568b98abc6a955962c);
+        
+
+        marker_75c85c7001da48948b1ed578e9033bee.bindPopup(popup_2fa5cda05adc4f01ac7441f6d3cdb53c)
+        ;
+
+        
+    
+    
+            marker_75c85c7001da48948b1ed578e9033bee.bindTooltip(
+                `<div>
+                     Information sur le parc-relais J.F. Kennedy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cbc61996976b48b39e48df353409dabd = L.marker(
+                [48.0868139293, -1.6434973209],
+                {}
+            ).addTo(map_d67336fb9ca04fc9b31b9cc79b225072);
+        
+    
+        var custom_icon_6f71acd7e53846eeb3e1178d2a9eeace = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_cbc61996976b48b39e48df353409dabd.setIcon(custom_icon_6f71acd7e53846eeb3e1178d2a9eeace);
+        
+    
+        var popup_76e9951e1276405aaced2e2f16501e54 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_24b69390955345f3871b1274df7d84e4 = $(`<div id="html_24b69390955345f3871b1274df7d84e4" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>La Poterie</h3></p><p><h5>Informations : </h5></p><p>Rue Emile Littré</p><p><i>Places disponibles : </i>150</p><p> <i>Places disponibles (PMR) : </i>2</p></div>`)[0];
+            popup_76e9951e1276405aaced2e2f16501e54.setContent(html_24b69390955345f3871b1274df7d84e4);
+        
+
+        marker_cbc61996976b48b39e48df353409dabd.bindPopup(popup_76e9951e1276405aaced2e2f16501e54)
+        ;
+
+        
+    
+    
+            marker_cbc61996976b48b39e48df353409dabd.bindTooltip(
+                `<div>
+                     Information sur le parc-relais La Poterie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f89ee4dd3b2470783fd8fe04bc7da36 = L.marker(
+                [48.11356, -1.64025],
+                {}
+            ).addTo(map_d67336fb9ca04fc9b31b9cc79b225072);
+        
+    
+        var custom_icon_503ff4152b3844c19e255a9bf2ca9370 = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_6f89ee4dd3b2470783fd8fe04bc7da36.setIcon(custom_icon_503ff4152b3844c19e255a9bf2ca9370);
+        
+    
+        var popup_1270dd5a54294be68ee4b1b1061b6506 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_888ac084671c4b97893cd8cf2f4c1707 = $(`<div id="html_888ac084671c4b97893cd8cf2f4c1707" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>Les Préales</h3></p><p><h5>Informations : </h5></p><p>Rue Django Reinhardt</p><p><i>Places disponibles : </i>239</p><p> <i>Places disponibles (PMR) : </i>4</p></div>`)[0];
+            popup_1270dd5a54294be68ee4b1b1061b6506.setContent(html_888ac084671c4b97893cd8cf2f4c1707);
+        
+
+        marker_6f89ee4dd3b2470783fd8fe04bc7da36.bindPopup(popup_1270dd5a54294be68ee4b1b1061b6506)
+        ;
+
+        
+    
+    
+            marker_6f89ee4dd3b2470783fd8fe04bc7da36.bindTooltip(
+                `<div>
+                     Information sur le parc-relais Les Préales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d63c79a49dff4127aced1ff06ca91870 = L.marker(
+                [48.0875369773, -1.6745548715],
+                {}
+            ).addTo(map_d67336fb9ca04fc9b31b9cc79b225072);
+        
+    
+        var custom_icon_c0c952e91372469faf1754bd204aaccb = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_d63c79a49dff4127aced1ff06ca91870.setIcon(custom_icon_c0c952e91372469faf1754bd204aaccb);
+        
+    
+        var popup_cfad9cec5860421abbb56d077c4ee57b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1d8a6606741148f2a5e07a1f1876764e = $(`<div id="html_1d8a6606741148f2a5e07a1f1876764e" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>Henri Fréville</h3></p><p><h5>Informations : </h5></p><p>Avenue Henri Fréville</p><p><i>Places disponibles : </i>225</p><p> <i>Places disponibles (PMR) : </i>9</p></div>`)[0];
+            popup_cfad9cec5860421abbb56d077c4ee57b.setContent(html_1d8a6606741148f2a5e07a1f1876764e);
+        
+
+        marker_d63c79a49dff4127aced1ff06ca91870.bindPopup(popup_cfad9cec5860421abbb56d077c4ee57b)
+        ;
+
+        
+    
+    
+            marker_d63c79a49dff4127aced1ff06ca91870.bindTooltip(
+                `<div>
+                     Information sur le parc-relais Henri Fréville
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7b3cc28429a04f91864eb4844cb421d3 = L.marker(
+                [48.1219060927, -1.7041822798],
+                {}
+            ).addTo(map_d67336fb9ca04fc9b31b9cc79b225072);
+        
+    
+        var custom_icon_1610ce951f6947abb2975128cefc9ffc = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_7b3cc28429a04f91864eb4844cb421d3.setIcon(custom_icon_1610ce951f6947abb2975128cefc9ffc);
+        
+    
+        var popup_a14689869eae401693b2e7d3a9ee0653 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0414e1f8eab449448d19bd2f2171d7de = $(`<div id="html_0414e1f8eab449448d19bd2f2171d7de" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>Villejean-Université</h3></p><p><h5>Informations : </h5></p><p>Rue d'Alsace</p><p><i>Places disponibles : </i>257</p><p> <i>Places disponibles (PMR) : </i>5</p></div>`)[0];
+            popup_a14689869eae401693b2e7d3a9ee0653.setContent(html_0414e1f8eab449448d19bd2f2171d7de);
+        
+
+        marker_7b3cc28429a04f91864eb4844cb421d3.bindPopup(popup_a14689869eae401693b2e7d3a9ee0653)
+        ;
+
+        
+    
+    
+            marker_7b3cc28429a04f91864eb4844cb421d3.bindTooltip(
+                `<div>
+                     Information sur le parc-relais Villejean-Université
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+	
+</html>

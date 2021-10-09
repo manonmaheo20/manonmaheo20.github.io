@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+
+        <title>Parcs-relais</title>
+
+<!-- Liens entête graphique parking -->
+
+		<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+    <script type="text/javascript">
+            Bokeh.set_log_level("info");
+    </script>
+
+<!-- Nos liens-->
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style4.css">  
+    <link rel="stylesheet" href="../css/grille4.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    </head>
+
+
+    <body>
+
+<!-- PARTIE LOGO -->
+
+		<header> 
+
+			<img src="../images/logostar.png" alt="Logo de la STAR" width="100%" height="100%" />
+
+    </header>
+
+<!-- PARTIE MENU -->
+
+        <nav>
+
+            <ul>
+                
+                <li><a href="../index.html">ACCUEIL</a>
+
+                <li><a href="#">METRO</a>
+
+                    <ul>
+                        <li><a href="page_metro_carte.html">État des stations métro</a></li>
+                    </ul>
+
+                </li>
+
+                <li><a href="#">BUS</a>
+        
+                    <ul>
+                        <li><a href="page_bus_carte.html">État des stations bus</a></li>
+                    </ul>
+
+                </li>
+
+                
+                <li><a href="#">VELO</a>
+        
+                    <ul>
+                        <li><a href="page_velos_carte.html">État des stations vélos</a></li>
+                        <li><a href="page_velos_pyramide.html">Vélos et emplacements</a></li>
+                    </ul>
+
+                </li>
+
+
+                <li><a href="#">PARCS-RELAIS</a>
+
+                    <ul>
+                        <li><a href="page_parking_carte.html">État des parcs-relais</a></li>
+                        <li><a href="page_parking_graphique.html">Capacité des parcs-relais</a></li>
+                    </ul>
+                    
+                </li>
+
+            </ul>
+
+        </nav>
+
+<h2 id="titre">État et capacité des parcs-relais</h2>
+
+<!-- PARTIE GRAPHIQUE -->
+
+    <article id = "graphique">
+
+      <div class="bk-root" id="064bd9d1-c2f3-40e8-990d-6ada200a9cb3" data-root-id="3418" align="center"></div>
+
+    </article>
+
+
+<!-- PARTIE JAUNE -->
+
+    <article id="complement">
+
+      <p id="parcs"> Parcs-Relais </p>
+
+      <ul>
+
+        <li><mark>Le Parc-Relais Villejean-université, rue d’Alsace :</mark> 382 places de stationnement, dont 9 réservées aux personnes en situation de handicap. Il est facilement accessible depuis la route de Saint-Malo et l’avenue Charles Tillon.</li><br><br>
+
+        <li><mark>Le Parc-Relais J.F. Kennedy, Boulevard d’Anjou :</mark> 384 places dont 12 réservées aux personnes en situation de handicap. Il est accessible depuis la route de Lorient, la RN 12 et la rocade.</li>
+
+      </ul>
+ 
+    </article>
+
+
+<!-- PARTIE PHOTO -->
+
+    <article id = "photo">
+
+      <img src="../images/parking2.png" alt="veloSTAR" align="center" width="100%">
+
+    </article>
+
+
+<!-- PARTIE VERTE -->
+
+    <article id = "aside">
+
+      <ul>
+
+        <li><mark>Le Parc-Relais La Poterie :</mark> 369 places dont 9 réservées aux personnes en situation de handicap. Il est accessible depuis la rocade sud, la route de Vern et la route de Châteaugiron.</li><br><br>
+
+        <li><mark>Le Parc-Relais Henri Fréville, boulevard Henri Fréville :</mark> 413 places dont 9 réservées aux personnes en situation de handicap. Il est accessible depuis la sortie porte d’Alma de la rocade sud.</li><br><br>
+
+        <li><mark>Le Parc-Relais Les Préales, avenue des Préales :</mark> 254 places, dont 6 réservées aux personnes en situation de handicap. Il est situé à proximité de l’arrêt de bus Les Préales.</li><br>
+
+      </ul>
+
+    </article>
+
+
+<!-- PARTIE TEXTE -->
+
+    <article id = "texte">
+
+      <p>Ces cinq parc-relais seront complétés lors de la mise en service de la ligne b du métro par trois nouveaux parcs : Cesson-Viasilva (800 places), Les Gayeulles (400 places) et Saint-Jacques-Gaîté (800 places). Il existe aussi des parcs relais non surveillés (Gare de Betton, Stade Rennais, Gevézé...)</p>
+
+    </article>
+
+    </body>
+
+<!-- Script du graphique des parcs-relais -->
+
+<script type="application/json" id="3510">
+          {"db8b4be7-3154-4a69-99d6-690c577fb041":{"roots":{"references":[{"attributes":{"text":"Etat et capacit\u00e9 actuelle des parcs-relais"},"id":"3419","type":"Title"},{"attributes":{"callback":null,"data":{"fonct":["Ferm\u00e9","Ouvert","Ouvert","Ferm\u00e9","Ferm\u00e9"],"nbr":[382,310,254,401,374],"parc":["J.F. Kennedy","La Poterie","Les Pr\u00e9ales","Henri Fr\u00e9ville","Villejean-Universit\u00e9"]},"selected":{"id":"3452","type":"Selection"},"selection_policy":{"id":"3453","type":"UnionRenderers"}},"id":"3417","type":"ColumnDataSource"},{"attributes":{"formatter":{"id":"3448","type":"CategoricalTickFormatter"},"ticker":{"id":"3430","type":"CategoricalTicker"}},"id":"3429","type":"CategoricalAxis"},{"attributes":{},"id":"3453","type":"UnionRenderers"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"3438","type":"HoverTool"}]},"id":"3439","type":"Toolbar"},{"attributes":{},"id":"3425","type":"CategoricalScale"},{"attributes":{"data_source":{"id":"3417","type":"ColumnDataSource"},"glyph":{"id":"3443","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"parc","nonselection_glyph":{"id":"3444","type":"VBar"},"selection_glyph":null,"view":{"id":"3446","type":"CDSView"}},"id":"3445","type":"GlyphRenderer"},{"attributes":{},"id":"3450","type":"BasicTickFormatter"},{"attributes":{"fill_color":{"field":"parc","transform":{"id":"3441","type":"CategoricalColorMapper"}},"line_color":{"value":"white"},"top":{"field":"nbr"},"width":{"value":0.7},"x":{"field":"parc"}},"id":"3443","type":"VBar"},{"attributes":{"factors":["J.F. Kennedy","La Poterie","Les Pr\u00e9ales","Henri Fr\u00e9ville","Villejean-Universit\u00e9"],"palette":["#3288bd","#99d594","#e6f598","#fee08b","#fc8d59","#d53e4f"]},"id":"3441","type":"CategoricalColorMapper"},{"attributes":{"dimension":1,"ticker":{"id":"3434","type":"BasicTicker"}},"id":"3437","type":"Grid"},{"attributes":{"callback":null,"factors":["J.F. Kennedy","La Poterie","Les Pr\u00e9ales","Henri Fr\u00e9ville","Villejean-Universit\u00e9"]},"id":"3421","type":"FactorRange"},{"attributes":{},"id":"3448","type":"CategoricalTickFormatter"},{"attributes":{},"id":"3430","type":"CategoricalTicker"},{"attributes":{},"id":"3452","type":"Selection"},{"attributes":{},"id":"3427","type":"LinearScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"nbr"},"width":{"value":0.7},"x":{"field":"parc"}},"id":"3444","type":"VBar"},{"attributes":{},"id":"3434","type":"BasicTicker"},{"attributes":{"source":{"id":"3417","type":"ColumnDataSource"}},"id":"3446","type":"CDSView"},{"attributes":{"below":[{"id":"3429","type":"CategoricalAxis"}],"center":[{"id":"3432","type":"Grid"},{"id":"3437","type":"Grid"}],"left":[{"id":"3433","type":"LinearAxis"}],"plot_height":350,"renderers":[{"id":"3445","type":"GlyphRenderer"}],"title":{"id":"3419","type":"Title"},"toolbar":{"id":"3439","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"3421","type":"FactorRange"},"x_scale":{"id":"3425","type":"CategoricalScale"},"y_range":{"id":"3423","type":"DataRange1d"},"y_scale":{"id":"3427","type":"LinearScale"}},"id":"3418","subtype":"Figure","type":"Plot"},{"attributes":{"grid_line_color":null,"ticker":{"id":"3430","type":"CategoricalTicker"}},"id":"3432","type":"Grid"},{"attributes":{"formatter":{"id":"3450","type":"BasicTickFormatter"},"ticker":{"id":"3434","type":"BasicTicker"}},"id":"3433","type":"LinearAxis"},{"attributes":{"callback":null,"end":451,"start":0},"id":"3423","type":"DataRange1d"},{"attributes":{"callback":null,"tooltips":"@fonct"},"id":"3438","type":"HoverTool"}],"root_ids":["3418"]},"title":"Bokeh Application","version":"1.3.4"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('3510').textContent;
+                  var render_items = [{"docid":"db8b4be7-3154-4a69-99d6-690c577fb041","roots":{"3418":"064bd9d1-c2f3-40e8-990d-6ada200a9cb3"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+	
+</html>

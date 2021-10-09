@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+
+        <title>Se déplacer en vélo</title>
+
+<!-- Liens entête de la pyramide des vélos -->
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+
+<!-- Nos liens -->
+
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/style3.css">  
+        <link rel="stylesheet" href="../css/grille3.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+		    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+<!-- PARTIE LOGO -->
+
+		  <header> 
+
+			<img src="../images/logostar.png" alt="Logo de la STAR" width="100%" height="100%">
+
+      </header>
+
+<!-- PARTIE MENU -->
+
+        <nav>
+
+            <ul>
+                
+                <li><a href="../index.html">ACCUEIL</a>
+
+                <li><a href="#">METRO</a>
+
+                    <ul>
+                        <li><a href="page_metro_carte.html">État des stations métro</a></li>
+                    </ul>
+
+                </li>
+
+                <li><a href="#">BUS</a>
+        
+                    <ul>
+                        <li><a href="page_bus_carte.html">État des stations bus</a></li>
+                    </ul>
+
+                </li>
+
+                
+                <li><a href="#">VELO</a>
+        
+                    <ul>
+                        <li><a href="page_velos_carte.html">État des stations vélos</a></li>
+                        <li><a href="page_velos_pyramide.html">Vélos et emplacements</a></li>
+                    </ul>
+
+                </li>
+
+
+                <li><a href="#">PARCS-RELAIS</a>
+
+                    <ul>
+                        <li><a href="page_parking_carte.html">État des parcs-relais</a></li>
+                        <li><a href="page_parking_graphique.html">Capacité des parcs-relais</a></li>
+                    </ul>
+                    
+                </li>
+
+            </ul>
+
+        </nav>
+
+<h2 id="titre">Emplacements et vélos disponibles</h2>
+
+<!-- PARTIE GRAPHIQUE -->
+
+		<article id = "graphique">
+
+			<div class="bk-root" id="f1d30742-99e6-4346-ad3f-19ce36f554c5" data-root-id="1550" align="center"></div>
+
+		</article>
+
+
+<!-- PARTIE TABLEAU DES TARIFS -->
+
+    <article id = "complement">
+
+      <p id="formules">Formules et tarifs</p>
+
+      <table> <!-- Tableau avec les chiffres -->
+
+        <tr> 
+          <th class="pasBordure">Formules libres</th> <th class="pasBordure2">Abonnement 1 an</th>
+        </tr>
+
+        <tr>
+          <td class="pasBordure"><br>1€ pour trajet unique (1h maximum) <br><br> 2€ pour 24h + 0.50cts par heure à chaque emprunt</td> <td class="pasBordure2"><br>30€ par an : 0,50cts par heure à chaque emprunt ou <br><br> 50€ par an : 1h gratuite à chaque emprunt, puis 0,50cts l'heure suivante</td>
+        </tr>
+
+      </table>
+
+      <p id="metrobus"><ins>Vous possedez déjà un abonnement Bus+Métro STAR ?</ins><br>Profitez de 40% de réduction sur l'abonnement 1 an soit 30€ par an (au lieu de 50€).</p>
+
+    </article>
+
+
+<!-- PARTIE PHOTO -->
+
+    <article id = "photo">
+
+      <img src="../images/veloSTAR.png" alt="veloSTAR" align="center">
+
+    </article>
+
+
+<!-- PARTIE TEXTE -->
+
+    <article id = "texte">
+
+      <p>Pour plus d'informations, rendez-vous à la Maison du Vélo, située rue du Puits-Mauger.</p>
+
+    </article>
+
+    </body>
+
+
+<!-- Script de la pyramide des vélos -->
+
+		  <script type="application/json" id="1685">
+          {"db847847-bf16-428d-ab52-870783961858":{"roots":{"references":[{"attributes":{"below":[{"id":"1561","type":"LinearAxis"}],"center":[{"id":"1565","type":"Grid"},{"id":"1569","type":"Grid"},{"id":"1595","type":"Legend"}],"left":[{"id":"1566","type":"CategoricalAxis"}],"outline_line_color":{"value":null},"plot_height":1000,"renderers":[{"id":"1587","type":"GlyphRenderer"},{"id":"1600","type":"GlyphRenderer"}],"title":{"id":"1551","type":"Title"},"toolbar":{"id":"1576","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"1553","type":"DataRange1d"},"x_scale":{"id":"1557","type":"LinearScale"},"y_range":{"id":"1555","type":"FactorRange"},"y_scale":{"id":"1559","type":"CategoricalScale"}},"id":"1550","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"1609","type":"Selection"},{"attributes":{"formatter":{"id":"1592","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"ticker":{"id":"1562","type":"BasicTicker"},"visible":false},"id":"1561","type":"LinearAxis"},{"attributes":{},"id":"1608","type":"UnionRenderers"},{"attributes":{},"id":"1557","type":"LinearScale"},{"attributes":{},"id":"1559","type":"CategoricalScale"},{"attributes":{"formatter":{"id":"1590","type":"CategoricalTickFormatter"},"minor_tick_line_color":{"value":null},"ticker":{"id":"1567","type":"CategoricalTicker"}},"id":"1566","type":"CategoricalAxis"},{"attributes":{"data_source":{"id":"1549","type":"ColumnDataSource"},"glyph":{"id":"1598","type":"HBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1599","type":"HBar"},"selection_glyph":null,"view":{"id":"1601","type":"CDSView"}},"id":"1600","type":"GlyphRenderer"},{"attributes":{},"id":"1573","type":"SaveTool"},{"attributes":{"callback":null,"factors":["Mus\u00e9e Beaux-Arts","Champs Libres","La Cri\u00e9e","Brest - Verdun","Marbeuf","Plaine de Baud","Gros-Ch\u00eane","Painlev\u00e9","Turmel","La Poterie","Pont de Strasbourg","Mairie","Sainte-Anne","H\u00f4tel Dieu","TNB","Pl\u00e9lo Colombier","Pont de Nantes","La Rotonde","Ch\u00e8ques Postaux","Anatole France","Paul Bert","Pontchaillou M\u00e9tro","Pierre Martin","Robidou","Cit\u00e9 Judiciaire","Metz - S\u00e9vign\u00e9","Beaulieu Chimie","Beaulieu Restau U","Berger","Cucill\u00e9","Jacques Cartier","Clemenceau","Binquenais","Sainte-Th\u00e9r\u00e8se","La Courrouze","Armorique","Gare Sud","R\u00e9publique","Place Hoche","Fac de Droit","Saint-Georges","La\u00ebnnec","Gares - Solf\u00e9rino","Charles de Gaulle","Oberthur","Place de Bretagne","Les Lices","Horizons","Gu\u00e9henno - Foug\u00e8res","Voltaire","Pont de Ch\u00e2teaudun","Auberge de Jeunesse","Villejean-Universit\u00e9","Pr\u00e9fecture","Champs Manceaux"],"range_padding":0.1},"id":"1555","type":"FactorRange"},{"attributes":{},"id":"1574","type":"ResetTool"},{"attributes":{"fill_color":{"value":"#FFBB00"},"height":{"value":0.9},"line_color":{"value":"#FFBB00"},"right":{"field":"emplacements_neg"},"y":{"field":"station"}},"id":"1598","type":"HBar"},{"attributes":{"fill_color":{"value":"#008383"},"height":{"value":0.9},"line_color":{"value":"#008383"},"right":{"field":"velos"},"y":{"field":"station"}},"id":"1585","type":"HBar"},{"attributes":{"source":{"id":"1549","type":"ColumnDataSource"}},"id":"1601","type":"CDSView"},{"attributes":{"callback":null},"id":"1553","type":"DataRange1d"},{"attributes":{},"id":"1571","type":"WheelZoomTool"},{"attributes":{"callback":null,"data":{"emplacements":[16,24,24,24,20,24,18,18,16,28,20,24,24,26,28,18,20,20,30,28,16,28,20,20,24,16,30,18,14,25,24,22,16,12,20,24,13,45,39,26,18,24,35,24,30,39,25,24,16,16,20,29,26,27,18],"emplacements_neg":[-16,-24,-24,-24,-20,-24,-18,-18,-16,-28,-20,-24,-24,-26,-28,-18,-20,-20,-30,-28,-16,-28,-20,-20,-24,-16,-30,-18,-14,-25,-24,-22,-16,-12,-20,-24,-13,-45,-39,-26,-18,-24,-35,-24,-30,-39,-25,-24,-16,-16,-20,-29,-26,-27,-18],"station":["Mus\u00e9e Beaux-Arts","Champs Libres","La Cri\u00e9e","Brest - Verdun","Marbeuf","Plaine de Baud","Gros-Ch\u00eane","Painlev\u00e9","Turmel","La Poterie","Pont de Strasbourg","Mairie","Sainte-Anne","H\u00f4tel Dieu","TNB","Pl\u00e9lo Colombier","Pont de Nantes","La Rotonde","Ch\u00e8ques Postaux","Anatole France","Paul Bert","Pontchaillou M\u00e9tro","Pierre Martin","Robidou","Cit\u00e9 Judiciaire","Metz - S\u00e9vign\u00e9","Beaulieu Chimie","Beaulieu Restau U","Berger","Cucill\u00e9","Jacques Cartier","Clemenceau","Binquenais","Sainte-Th\u00e9r\u00e8se","La Courrouze","Armorique","Gare Sud","R\u00e9publique","Place Hoche","Fac de Droit","Saint-Georges","La\u00ebnnec","Gares - Solf\u00e9rino","Charles de Gaulle","Oberthur","Place de Bretagne","Les Lices","Horizons","Gu\u00e9henno - Foug\u00e8res","Voltaire","Pont de Ch\u00e2teaudun","Auberge de Jeunesse","Villejean-Universit\u00e9","Pr\u00e9fecture","Champs Manceaux"],"velos":[9,15,12,9,12,9,7,10,5,7,5,10,2,9,7,0,16,5,16,17,10,4,2,8,17,9,14,10,6,20,11,13,7,6,7,10,1,23,20,19,11,15,7,16,16,15,7,11,6,5,8,18,13,13,5]},"selected":{"id":"1609","type":"Selection"},"selection_policy":{"id":"1608","type":"UnionRenderers"}},"id":"1549","type":"ColumnDataSource"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"height":{"value":0.9},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"right":{"field":"emplacements_neg"},"y":{"field":"station"}},"id":"1599","type":"HBar"},{"attributes":{"label":{"value":"Emplacements disponibles"},"renderers":[{"id":"1600","type":"GlyphRenderer"}]},"id":"1610","type":"LegendItem"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1594","type":"BoxAnnotation"},{"attributes":{"items":[{"id":"1596","type":"LegendItem"},{"id":"1610","type":"LegendItem"}]},"id":"1595","type":"Legend"},{"attributes":{"label":{"value":"V\u00e9los disponibles"},"renderers":[{"id":"1587","type":"GlyphRenderer"}]},"id":"1596","type":"LegendItem"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"height":{"value":0.9},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"right":{"field":"velos"},"y":{"field":"station"}},"id":"1586","type":"HBar"},{"attributes":{"data_source":{"id":"1549","type":"ColumnDataSource"},"glyph":{"id":"1585","type":"HBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1586","type":"HBar"},"selection_glyph":null,"view":{"id":"1588","type":"CDSView"}},"id":"1587","type":"GlyphRenderer"},{"attributes":{},"id":"1562","type":"BasicTicker"},{"attributes":{"dimension":1,"grid_line_color":null,"ticker":{"id":"1567","type":"CategoricalTicker"}},"id":"1569","type":"Grid"},{"attributes":{"ticker":{"id":"1562","type":"BasicTicker"}},"id":"1565","type":"Grid"},{"attributes":{"text":"Emplacements et v\u00e9los disponibles dans chaque station v\u00e9los"},"id":"1551","type":"Title"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1570","type":"PanTool"},{"id":"1571","type":"WheelZoomTool"},{"id":"1572","type":"BoxZoomTool"},{"id":"1573","type":"SaveTool"},{"id":"1574","type":"ResetTool"},{"id":"1575","type":"HelpTool"},{"id":"1583","type":"HoverTool"}]},"id":"1576","type":"Toolbar"},{"attributes":{},"id":"1570","type":"PanTool"},{"attributes":{},"id":"1567","type":"CategoricalTicker"},{"attributes":{"overlay":{"id":"1594","type":"BoxAnnotation"}},"id":"1572","type":"BoxZoomTool"},{"attributes":{},"id":"1575","type":"HelpTool"},{"attributes":{"source":{"id":"1549","type":"ColumnDataSource"}},"id":"1588","type":"CDSView"},{"attributes":{"callback":null,"tooltips":[["Emplacements disponibles ","@emplacements"],["V\u00e9los disponibles ","@velos"]]},"id":"1583","type":"HoverTool"},{"attributes":{},"id":"1592","type":"BasicTickFormatter"},{"attributes":{},"id":"1590","type":"CategoricalTickFormatter"}],"root_ids":["1550"]},"title":"Bokeh Application","version":"1.3.4"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1685').textContent;
+                  var render_items = [{"docid":"db847847-bf16-428d-ab52-870783961858","roots":{"1550":"f1d30742-99e6-4346-ad3f-19ce36f554c5"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+
+        <title>Se déplacer en métro</title>
+
+<!-- Liens carte des métros -->
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    	<link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    	<style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    	<style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+
+    	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <style>
+                #map_16238f522dd24c2e879eb258b6db5924 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+        </style>
+
+<!-- Nos propres liens -->
+
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/style2.css">  
+        <link rel="stylesheet" href="../css/grille2.css"> 
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+		
+    </head>
+
+
+    <body>
+
+<!-- PARTIE LOGO -->
+
+		<header> 
+
+			<img src="../images/logostar.png" alt="Logo de la STAR" width="100%" height="100%">
+
+        </header>
+
+<!-- PARTIE MENU -->
+
+        <nav>
+
+            <ul>
+                
+                <li><a href="../index.html">ACCUEIL</a>
+
+                <li><a href="#">METRO</a>
+
+                    <ul>
+                        <li><a href="page_metro_carte.html">État des stations métro</a></li>
+                    </ul>
+
+                </li>
+
+                <li><a href="#">BUS</a>
+        
+                    <ul>
+                        <li><a href="page_bus_carte.html">État des stations bus</a></li>
+                    </ul>
+
+                </li>
+
+                
+                <li><a href="#">VELO</a>
+        
+                    <ul>
+                        <li><a href="page_velos_carte.html">État des stations vélos</a></li>
+                        <li><a href="page_velos_pyramide.html">Vélos et emplacements</a></li>
+                    </ul>
+
+                </li>
+
+
+                <li><a href="#">PARCS-RELAIS</a>
+
+                    <ul>
+                        <li><a href="page_parking_carte.html">État des parcs-relais</a></li>
+                        <li><a href="page_parking_graphique.html">Capacité des parcs-relais</a></li>
+                    </ul>
+                    
+                </li>
+
+            </ul>
+
+        </nav>
+
+<!-- PARTIE PRESENTATION METRO RENNES -->
+
+		<article>
+
+<!-- 			BLOC INFORMATIONS -->
+
+			<h2>Informations sur les métros</h2>
+
+			<div id = "informations">
+
+				<p>Le métro circule tous les jours de l’année, sauf le 1er mai.</p>
+
+				<h3>Fréquence</h3>
+
+				<p>Il y a un métro toutes les 1 min 30 (en heure de pointe) à 4 minutes environ, toute la journée.</p>
+
+				<h3>Horaires</h3>
+
+				<p>Le métro circule (hors période estivale) :</p>
+					
+					<ul>
+
+						<li style="color: #008383;">Du lundi au mercredi de 5h15 à 0h45</li>
+						<ul>
+							<li>Derniers départs de J.F. Kennedy et de La Poterie : 0h25</li>
+						</ul><br>
+
+						<li style="color: #008383;">Les jeudis, vendredis et samedis de 5h15 à 1h45</li>
+						<ul>
+							<li>Derniers départs de J.F. Kennedy et de La Poterie : 1h25</li>
+						</ul><br>
+
+						<li style="color: #008383;">Les dimanches et les jours fériés de 7h25 à 0h45</li>
+						<ul>
+							<li>Derniers départs de J.F. Kennedy et de La Poterie : 0h25</li>
+						</ul><br>
+
+					</ul>
+					
+				<p>A savoir : Lors de grands événements organisés dans l’agglomération rennaise, le service du métro est prolongé jusqu’à 2 heures du matin.</p>
+
+			</div>
+
+<!-- 			BLOC CARTOGRAPHIE -->
+			
+			<h2>État des stations métro en temps réel</h2>
+
+			<div class="folium-map" id="map_16238f522dd24c2e879eb258b6db5924"></div>
+			
+		</article>
+
+	</body>
+
+<!-- Script de la carte sur les métro -->
+
+<script>    
+    
+            var map_16238f522dd24c2e879eb258b6db5924 = L.map(
+                "map_16238f522dd24c2e879eb258b6db5924",
+                {
+                    center: [48.1133, -1.6833],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4b4c303cc43246a1a7839e5cad0d4c2b = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+            var poly_line_58abee7fa3e1494182b65002bce8c92b = L.polyline(
+                [[48.08749, -1.644573], [48.087587, -1.650413], [48.087604, -1.65089], [48.087697, -1.652788], [48.087711, -1.653156], [48.087741, -1.654826], [48.08774, -1.655061], [48.087731, -1.655256], [48.087708, -1.655486], [48.087691, -1.6556], [48.087664, -1.65575], [48.087612, -1.65597], [48.087548, -1.656185], [48.087499, -1.656325], [48.087434, -1.656497], [48.086711, -1.658322], [48.086635, -1.65853], [48.086579, -1.658709], [48.08654, -1.658853], [48.086515, -1.658963], [48.086474, -1.659188], [48.086446, -1.659417], [48.086438, -1.659533], [48.086431, -1.659688], [48.08643, -1.659845], [48.086432, -1.660041], [48.086633, -1.671987], [48.086637, -1.67242], [48.086643, -1.673765], [48.086654, -1.673951], [48.086667, -1.674049], [48.086682, -1.67413], [48.086703, -1.674212], [48.086728, -1.674292], [48.086752, -1.674353], [48.086785, -1.674425], [48.086838, -1.674518], [48.086899, -1.674601], [48.086966, -1.674673], [48.087049, -1.674739], [48.087127, -1.674782], [48.087207, -1.67481], [48.087291, -1.674824], [48.087381, -1.674827], [48.088556, -1.674783], [48.088759, -1.674769], [48.08916, -1.674732], [48.089366, -1.674718], [48.091554, -1.674634], [48.09171, -1.674618], [48.091904, -1.674584], [48.092636, -1.674415], [48.092792, -1.674384], [48.09287, -1.674374], [48.092963, -1.674368], [48.093046, -1.674369], [48.093151, -1.674377], [48.094352, -1.674536], [48.09563, -1.674758], [48.095855, -1.674802], [48.096031, -1.674848], [48.096225, -1.674918], [48.096399, -1.674997], [48.096823, -1.67521], [48.096965, -1.675271], [48.09708, -1.675314], [48.097261, -1.67537], [48.0979, -1.675554], [48.098138, -1.675613], [48.098224, -1.675628], [48.098322, -1.675637], [48.098487, -1.675636], [48.098586, -1.675625], [48.098684, -1.675606], [48.098845, -1.675557], [48.099003, -1.675488], [48.099096, -1.675437], [48.099187, -1.675378], [48.099333, -1.675265], [48.099472, -1.675134], [48.099603, -1.674984], [48.099725, -1.674819], [48.099837, -1.674638], [48.099918, -1.674483], [48.099993, -1.674318], [48.100043, -1.674191], [48.100111, -1.673993], [48.100157, -1.673833], [48.100202, -1.67366], [48.100342, -1.673051], [48.100397, -1.672826], [48.100461, -1.672605], [48.100529, -1.672406], [48.10058, -1.672279], [48.100635, -1.672157], [48.100736, -1.671962], [48.100848, -1.671782], [48.10097, -1.671617], [48.101048, -1.671526], [48.101129, -1.671441], [48.101212, -1.671362], [48.101299, -1.67129], [48.101387, -1.671225], [48.101478, -1.671167], [48.101571, -1.671116], [48.101666, -1.671073], [48.101762, -1.671037], [48.101859, -1.671008], [48.102022, -1.670978], [48.10213, -1.670969], [48.102229, -1.67097], [48.102327, -1.670978], [48.102426, -1.670993], [48.102523, -1.671017], [48.102652, -1.67106], [48.102778, -1.671116], [48.102902, -1.671185], [48.103021, -1.671267], [48.103109, -1.671337], [48.103221, -1.67144], [48.103306, -1.67153], [48.103402, -1.671644], [48.103513, -1.671788], [48.104279, -1.672839], [48.104371, -1.672974], [48.104456, -1.67311], [48.104547, -1.673271], [48.104604, -1.673382], [48.104711, -1.673614], [48.104808, -1.673855], [48.104892, -1.674107], [48.10493, -1.674235], [48.104977, -1.674417], [48.105016, -1.674587], [48.105057, -1.674784], [48.105574, -1.677398], [48.105641, -1.67769], [48.105672, -1.677801], [48.105712, -1.677928], [48.105772, -1.678092], [48.105857, -1.678289], [48.105954, -1.678473], [48.106039, -1.678611], [48.10613, -1.67874], [48.106252, -1.678887], [48.106356, -1.678993], [48.106492, -1.67911], [48.106577, -1.679172], [48.106693, -1.679243], [48.106782, -1.679289], [48.106872, -1.679327], [48.106964, -1.679359], [48.107057, -1.679383], [48.107172, -1.679403], [48.107266, -1.679411], [48.107424, -1.679407], [48.10759, -1.679384], [48.107754, -1.679346], [48.108126, -1.679245], [48.108338, -1.679203], [48.108525, -1.679182], [48.10869, -1.679175], [48.110117, -1.679186], [48.110286, -1.679195], [48.1106, -1.679225], [48.110825, -1.679242], [48.112853, -1.679331], [48.113061, -1.679346], [48.113217, -1.679368], [48.113353, -1.679401], [48.113475, -1.679445], [48.113594, -1.679502], [48.113711, -1.679571], [48.113852, -1.679674], [48.11396, -1.679769], [48.114064, -1.679876], [48.114153, -1.679982], [48.114258, -1.680121], [48.114839, -1.680968], [48.114928, -1.681092], [48.115006, -1.681192], [48.115099, -1.6813], [48.115231, -1.681436], [48.115351, -1.681545], [48.115743, -1.681889], [48.115866, -1.682007], [48.115974, -1.68212], [48.116079, -1.682243], [48.116195, -1.6824], [48.116305, -1.682568], [48.116406, -1.682747], [48.116498, -1.682937], [48.116566, -1.683095], [48.116632, -1.683272], [48.1167, -1.683477], [48.116801, -1.683817], [48.117381, -1.685867], [48.117471, -1.686155], [48.117559, -1.686403], [48.117623, -1.686564], [48.11769, -1.686723], [48.117766, -1.686886], [48.117833, -1.687022], [48.118344, -1.68799], [48.118433, -1.688149], [48.118505, -1.688269], [48.118626, -1.688442], [48.118755, -1.688596], [48.118891, -1.688733], [48.119017, -1.688837], [48.119121, -1.688911], [48.119247, -1.68899], [48.12017, -1.68953], [48.120371, -1.689654], [48.120487, -1.689735], [48.120573, -1.689802], [48.12066, -1.689879], [48.120747, -1.689965], [48.120868, -1.690105], [48.120968, -1.690243], [48.121067, -1.690401], [48.121152, -1.690561], [48.121234, -1.69074], [48.121305, -1.690928], [48.121363, -1.691113], [48.121413, -1.691312], [48.121459, -1.691555], [48.121502, -1.69186], [48.121559, -1.692401], [48.121572, -1.692566], [48.121577, -1.69268], [48.121578, -1.692799], [48.121576, -1.692934], [48.121518, -1.694344], [48.121511, -1.694664], [48.121513, -1.694885], [48.121519, -1.695058], [48.121566, -1.695968], [48.121569, -1.696145], [48.121564, -1.6963], [48.121552, -1.696455], [48.121531, -1.696608], [48.1215, -1.696768], [48.121461, -1.696925], [48.121423, -1.697048], [48.121384, -1.697159], [48.121225, -1.697576], [48.121165, -1.69774], [48.121118, -1.697891], [48.121082, -1.698028], [48.121048, -1.698197], [48.121027, -1.69835], [48.121012, -1.698515], [48.121007, -1.69867], [48.121013, -1.698878], [48.121033, -1.699082], [48.121069, -1.699305], [48.121165, -1.699781], [48.121206, -1.700012], [48.12122, -1.700125], [48.12123, -1.700233], [48.121241, -1.700462], [48.121242, -1.700711], [48.121227, -1.703198], [48.121312, -1.707452], [48.12131, -1.707778], [48.121278, -1.70874], [48.121273, -1.709058], [48.121311, -1.712185]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+            poly_line_58abee7fa3e1494182b65002bce8c92b.bindTooltip(
+                `<div>
+                     Ligne <img src='ligneA.png' alt='A' width='15' height='15'>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77e24b58360b4a42875d2ad3abf74835 = L.marker(
+                [48.1181240493, -1.6875392714],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_b8411f9a085642ee9e5b5dc2818eed0b = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_77e24b58360b4a42875d2ad3abf74835.setIcon(custom_icon_b8411f9a085642ee9e5b5dc2818eed0b);
+        
+    
+        var popup_c6fac737dfef48ec92fbd9051385e513 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4105fe49c8774a3e89196d90bc78b4ef = $(`<div id="html_4105fe49c8774a3e89196d90bc78b4ef" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Anatole France</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -1 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_c6fac737dfef48ec92fbd9051385e513.setContent(html_4105fe49c8774a3e89196d90bc78b4ef);
+        
+
+        marker_77e24b58360b4a42875d2ad3abf74835.bindPopup(popup_c6fac737dfef48ec92fbd9051385e513)
+        ;
+
+        
+    
+    
+            marker_77e24b58360b4a42875d2ad3abf74835.bindTooltip(
+                `<div>
+                     Information sur la station Anatole France
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8600bc0a20ce4796b6be07659ed8477c = L.marker(
+                [48.1055023693, -1.6769935299],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_f29a75c8809c4727bd175ab5d563deca = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_8600bc0a20ce4796b6be07659ed8477c.setIcon(custom_icon_f29a75c8809c4727bd175ab5d563deca);
+        
+    
+        var popup_05c9c7ca71654acd9874a7e3ae25b5e3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aa8337e6bc624175b457bc24f9dbe1c0 = $(`<div id="html_aa8337e6bc624175b457bc24f9dbe1c0" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Charles de Gaulle</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -3 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_05c9c7ca71654acd9874a7e3ae25b5e3.setContent(html_aa8337e6bc624175b457bc24f9dbe1c0);
+        
+
+        marker_8600bc0a20ce4796b6be07659ed8477c.bindPopup(popup_05c9c7ca71654acd9874a7e3ae25b5e3)
+        ;
+
+        
+    
+    
+            marker_8600bc0a20ce4796b6be07659ed8477c.bindTooltip(
+                `<div>
+                     Information sur la station Charles de Gaulle
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c71aeea935c74ffd901b0adaf2f3e7e8 = L.marker(
+                [48.0934961286, -1.6743871124],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_a09ccca8714846c8bb19ad940addc596 = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_c71aeea935c74ffd901b0adaf2f3e7e8.setIcon(custom_icon_a09ccca8714846c8bb19ad940addc596);
+        
+    
+        var popup_5ccb80428f334362b281037ea33d56de = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7aa9c05e394f4d3a8e8b946e8a429438 = $(`<div id="html_7aa9c05e394f4d3a8e8b946e8a429438" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Clemenceau</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -2 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_5ccb80428f334362b281037ea33d56de.setContent(html_7aa9c05e394f4d3a8e8b946e8a429438);
+        
+
+        marker_c71aeea935c74ffd901b0adaf2f3e7e8.bindPopup(popup_5ccb80428f334362b281037ea33d56de)
+        ;
+
+        
+    
+    
+            marker_c71aeea935c74ffd901b0adaf2f3e7e8.bindTooltip(
+                `<div>
+                     Information sur la station Clemenceau
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_00dbd12b6d804fea91eb1bdc2576861f = L.marker(
+                [48.1037869506, -1.6721879169],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_e7ac91bc5cc24046b2f8c9d3b3d71f97 = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_00dbd12b6d804fea91eb1bdc2576861f.setIcon(custom_icon_e7ac91bc5cc24046b2f8c9d3b3d71f97);
+        
+    
+        var popup_a69550444b604462b0d49456d9189970 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ee7052fe2ac244b697139efef59cac20 = $(`<div id="html_ee7052fe2ac244b697139efef59cac20" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Gares</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -3 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_a69550444b604462b0d49456d9189970.setContent(html_ee7052fe2ac244b697139efef59cac20);
+        
+
+        marker_00dbd12b6d804fea91eb1bdc2576861f.bindPopup(popup_a69550444b604462b0d49456d9189970)
+        ;
+
+        
+    
+    
+            marker_00dbd12b6d804fea91eb1bdc2576861f.bindTooltip(
+                `<div>
+                     Information sur la station Gares
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4d00b2bff71d4218b811501fe8056e4f = L.marker(
+                [48.08769504, -1.6748314463],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_ea9aaf01f1d84ff895856c836caa7277 = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_4d00b2bff71d4218b811501fe8056e4f.setIcon(custom_icon_ea9aaf01f1d84ff895856c836caa7277);
+        
+    
+        var popup_74cbb456718a4855ab492628445049f9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e4585297e4594565a5b020fe0cd0e032 = $(`<div id="html_e4585297e4594565a5b020fe0cd0e032" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Henri Fréville</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -1 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_74cbb456718a4855ab492628445049f9.setContent(html_e4585297e4594565a5b020fe0cd0e032);
+        
+
+        marker_4d00b2bff71d4218b811501fe8056e4f.bindPopup(popup_74cbb456718a4855ab492628445049f9)
+        ;
+
+        
+    
+    
+            marker_4d00b2bff71d4218b811501fe8056e4f.bindTooltip(
+                `<div>
+                     Information sur la station Henri Fréville
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_013bdbb83dc248a883690daac0ce9d40 = L.marker(
+                [48.0865630682, -1.6679158417],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_3db11d9edfbb4b498ddd168e7d3500e1 = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_013bdbb83dc248a883690daac0ce9d40.setIcon(custom_icon_3db11d9edfbb4b498ddd168e7d3500e1);
+        
+    
+        var popup_004e5fc003c34df9b6b4718cd26ffe0f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a8df03d854ad48f3b29764164c904a50 = $(`<div id="html_a8df03d854ad48f3b29764164c904a50" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Italie</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -2 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_004e5fc003c34df9b6b4718cd26ffe0f.setContent(html_a8df03d854ad48f3b29764164c904a50);
+        
+
+        marker_013bdbb83dc248a883690daac0ce9d40.bindPopup(popup_004e5fc003c34df9b6b4718cd26ffe0f)
+        ;
+
+        
+    
+    
+            marker_013bdbb83dc248a883690daac0ce9d40.bindTooltip(
+                `<div>
+                     Information sur la station Italie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fc03fedcf74f4a6182532f25b821658b = L.marker(
+                [48.1213187854, -1.7114610115],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_b15794e07ce346aa9225169a7cd9eef9 = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_fc03fedcf74f4a6182532f25b821658b.setIcon(custom_icon_b15794e07ce346aa9225169a7cd9eef9);
+        
+    
+        var popup_2671dd194ce04c24886ad93a6307b3e8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bc5ad6044bbd47f6a6920c20b43f4c58 = $(`<div id="html_bc5ad6044bbd47f6a6920c20b43f4c58" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> J.F. Kennedy</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -2 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_2671dd194ce04c24886ad93a6307b3e8.setContent(html_bc5ad6044bbd47f6a6920c20b43f4c58);
+        
+
+        marker_fc03fedcf74f4a6182532f25b821658b.bindPopup(popup_2671dd194ce04c24886ad93a6307b3e8)
+        ;
+
+        
+    
+    
+            marker_fc03fedcf74f4a6182532f25b821658b.bindTooltip(
+                `<div>
+                     Information sur la station J.F. Kennedy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_366d6fdf550944dd9bafe2ddeac62559 = L.marker(
+                [48.0976622852, -1.6755582919],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_d9ebab10530d4c02b11583ee1b8c8fab = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_366d6fdf550944dd9bafe2ddeac62559.setIcon(custom_icon_d9ebab10530d4c02b11583ee1b8c8fab);
+        
+    
+        var popup_b1dca24e6dcf44aea99036fbb846dfe3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ee2fb26629a147ec87747ec2c0a2e572 = $(`<div id="html_ee2fb26629a147ec87747ec2c0a2e572" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Jacques Cartier</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -1 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_b1dca24e6dcf44aea99036fbb846dfe3.setContent(html_ee2fb26629a147ec87747ec2c0a2e572);
+        
+
+        marker_366d6fdf550944dd9bafe2ddeac62559.bindPopup(popup_b1dca24e6dcf44aea99036fbb846dfe3)
+        ;
+
+        
+    
+    
+            marker_366d6fdf550944dd9bafe2ddeac62559.bindTooltip(
+                `<div>
+                     Information sur la station Jacques Cartier
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1d30328bfe434391af1060235542a3f4 = L.marker(
+                [48.0874948479, -1.6445723541],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_c4a648aada554fa49f87cda9304da57b = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_1d30328bfe434391af1060235542a3f4.setIcon(custom_icon_c4a648aada554fa49f87cda9304da57b);
+        
+    
+        var popup_22b05dce2d8d411f82e5e3119c21da82 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_93d5d18daf194a6299327fc48e0f352f = $(`<div id="html_93d5d18daf194a6299327fc48e0f352f" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> La Poterie</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : 1 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_22b05dce2d8d411f82e5e3119c21da82.setContent(html_93d5d18daf194a6299327fc48e0f352f);
+        
+
+        marker_1d30328bfe434391af1060235542a3f4.bindPopup(popup_22b05dce2d8d411f82e5e3119c21da82)
+        ;
+
+        
+    
+    
+            marker_1d30328bfe434391af1060235542a3f4.bindTooltip(
+                `<div>
+                     Information sur la station La Poterie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0e8a2e7d9776476e8ca8b14d022b7b9d = L.marker(
+                [48.0877374814, -1.6542707529],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_fc9e33e5cbc24bbf8ebc292fcb552c04 = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_0e8a2e7d9776476e8ca8b14d022b7b9d.setIcon(custom_icon_fc9e33e5cbc24bbf8ebc292fcb552c04);
+        
+    
+        var popup_c54d4f7c0c1d42118a72e3a11ee2fd26 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_74f4a909a13f4f14ae127698f1723b3b = $(`<div id="html_74f4a909a13f4f14ae127698f1723b3b" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Le Blosne</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -1 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_c54d4f7c0c1d42118a72e3a11ee2fd26.setContent(html_74f4a909a13f4f14ae127698f1723b3b);
+        
+
+        marker_0e8a2e7d9776476e8ca8b14d022b7b9d.bindPopup(popup_c54d4f7c0c1d42118a72e3a11ee2fd26)
+        ;
+
+        
+    
+    
+            marker_0e8a2e7d9776476e8ca8b14d022b7b9d.bindTooltip(
+                `<div>
+                     Information sur la station Le Blosne
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9d78a8b4a01340f5bd191d852545d539 = L.marker(
+                [48.1215385076, -1.6933830487],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_d7236b17765f47738e5750a9e0a4ed9f = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_9d78a8b4a01340f5bd191d852545d539.setIcon(custom_icon_d7236b17765f47738e5750a9e0a4ed9f);
+        
+    
+        var popup_16845daf2f674e278b298aafc9880bcd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4d3f9631e08a4697888ab260ae9f1241 = $(`<div id="html_4d3f9631e08a4697888ab260ae9f1241" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Pontchaillou</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : 1 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_16845daf2f674e278b298aafc9880bcd.setContent(html_4d3f9631e08a4697888ab260ae9f1241);
+        
+
+        marker_9d78a8b4a01340f5bd191d852545d539.bindPopup(popup_16845daf2f674e278b298aafc9880bcd)
+        ;
+
+        
+    
+    
+            marker_9d78a8b4a01340f5bd191d852545d539.bindTooltip(
+                `<div>
+                     Information sur la station Pontchaillou
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6d2bd721b9734e1b854df09c259f407b = L.marker(
+                [48.1097223384, -1.679175813],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_9ebf6b8222434ab5ac3ccb8f68024c53 = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_6d2bd721b9734e1b854df09c259f407b.setIcon(custom_icon_9ebf6b8222434ab5ac3ccb8f68024c53);
+        
+    
+        var popup_ae714c4810254ddda1389e21355d3bbf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5f8a70324b374ee083146360c142173d = $(`<div id="html_5f8a70324b374ee083146360c142173d" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> République</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -2 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_ae714c4810254ddda1389e21355d3bbf.setContent(html_5f8a70324b374ee083146360c142173d);
+        
+
+        marker_6d2bd721b9734e1b854df09c259f407b.bindPopup(popup_ae714c4810254ddda1389e21355d3bbf)
+        ;
+
+        
+    
+    
+            marker_6d2bd721b9734e1b854df09c259f407b.bindTooltip(
+                `<div>
+                     Information sur la station République
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2cd3eb41699e4c2dad0abba156b94860 = L.marker(
+                [48.1144295872, -1.6804038629],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_d63d1825a01649be9bf8dbf5e7663c6e = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_2cd3eb41699e4c2dad0abba156b94860.setIcon(custom_icon_d63d1825a01649be9bf8dbf5e7663c6e);
+        
+    
+        var popup_af24fd64a07b4e22847355d11b0b0a85 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8b170c767fa04aaa8cf5d66c7fe13222 = $(`<div id="html_8b170c767fa04aaa8cf5d66c7fe13222" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Sainte-Anne</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -3 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_af24fd64a07b4e22847355d11b0b0a85.setContent(html_8b170c767fa04aaa8cf5d66c7fe13222);
+        
+
+        marker_2cd3eb41699e4c2dad0abba156b94860.bindPopup(popup_af24fd64a07b4e22847355d11b0b0a85)
+        ;
+
+        
+    
+    
+            marker_2cd3eb41699e4c2dad0abba156b94860.bindTooltip(
+                `<div>
+                     Information sur la station Sainte-Anne
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_176d2b9336494d6ba9155e8c860957be = L.marker(
+                [48.0864870579, -1.6604747921],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_9f3a38f18f2f41e5b02ff01d30d74556 = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_176d2b9336494d6ba9155e8c860957be.setIcon(custom_icon_9f3a38f18f2f41e5b02ff01d30d74556);
+        
+    
+        var popup_c4a8423da23c4ac4beac14b49f74d07d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_888b5049fa8348dcbb6374167175ca86 = $(`<div id="html_888b5049fa8348dcbb6374167175ca86" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Triangle</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -2 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_c4a8423da23c4ac4beac14b49f74d07d.setContent(html_888b5049fa8348dcbb6374167175ca86);
+        
+
+        marker_176d2b9336494d6ba9155e8c860957be.bindPopup(popup_c4a8423da23c4ac4beac14b49f74d07d)
+        ;
+
+        
+    
+    
+            marker_176d2b9336494d6ba9155e8c860957be.bindTooltip(
+                `<div>
+                     Information sur la station Triangle
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6ef8d37704f84b869183ac2549f375ed = L.marker(
+                [48.1212502263, -1.7039500408],
+                {}
+            ).addTo(map_16238f522dd24c2e879eb258b6db5924);
+        
+    
+        var custom_icon_538f77c00ea745dca9e22bdabc5b0bdd = L.icon({"iconSize": [30, 30], "iconUrl": "https://image.flaticon.com/icons/png/512/1183/1183363.png"});
+        marker_6ef8d37704f84b869183ac2549f375ed.setIcon(custom_icon_538f77c00ea745dca9e22bdabc5b0bdd);
+        
+    
+        var popup_10e5a78fe6b648f992aca79e022eb416 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2ca7d510a6614202b568b9bd493b3ee4 = $(`<div id="html_2ca7d510a6614202b568b9bd493b3ee4" style="width: 100.0%; height: 100.0%;"><center><p style='width: 13em; height: auto;'><h4> Villejean-Université</h4></p><p><h5>Informations : </h5></p><p><i> Ligne de métro <img src='ligneA.png' alt='ligneA' width='15' height='15'> </i></p><p>Etat : Ouverte<p>Niveaux : -1 </p><p>Accessibilité pour personnes à mobilité réduite : Oui </p></center></div>`)[0];
+            popup_10e5a78fe6b648f992aca79e022eb416.setContent(html_2ca7d510a6614202b568b9bd493b3ee4);
+        
+
+        marker_6ef8d37704f84b869183ac2549f375ed.bindPopup(popup_10e5a78fe6b648f992aca79e022eb416)
+        ;
+
+        
+    
+    
+            marker_6ef8d37704f84b869183ac2549f375ed.bindTooltip(
+                `<div>
+                     Information sur la station Villejean-Université
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+
+</html>
+
+
+
+
+
+
