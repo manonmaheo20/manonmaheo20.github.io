@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c8a2ceddd4514ac188c36b0b1a8b2283 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_c8a2ceddd4514ac188c36b0b1a8b2283" ></div>
+        
+</body>
+<script>    
+    
+            var map_c8a2ceddd4514ac188c36b0b1a8b2283 = L.map(
+                "map_c8a2ceddd4514ac188c36b0b1a8b2283",
+                {
+                    center: [48.0833, -1.6833],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c56db6ce26d34fe18a974dcabcc2d29d = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c8a2ceddd4514ac188c36b0b1a8b2283);
+        
+    
+            var marker_25bd096e4bcc4fd0b2e87a3b21eb6b6d = L.marker(
+                [48.1210803663, -1.7136311256],
+                {}
+            ).addTo(map_c8a2ceddd4514ac188c36b0b1a8b2283);
+        
+    
+        var custom_icon_540d32f7567844119d22c480ee804596 = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_25bd096e4bcc4fd0b2e87a3b21eb6b6d.setIcon(custom_icon_540d32f7567844119d22c480ee804596);
+        
+    
+        var popup_715e16de46f1487cb1a6357ff40b9003 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_274855cfa4fc49efb8f96c2121b0a164 = $(`<div id="html_274855cfa4fc49efb8f96c2121b0a164" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>J.F. Kennedy</h3></p><p><h5>Informations : </h5></p><p>Boulevard d'Anjou</p><p><i>Places disponibles : </i>382</p><p> <i>Places disponibles (PMR) : </i>12</p></div>`)[0];
+            popup_715e16de46f1487cb1a6357ff40b9003.setContent(html_274855cfa4fc49efb8f96c2121b0a164);
+        
+
+        marker_25bd096e4bcc4fd0b2e87a3b21eb6b6d.bindPopup(popup_715e16de46f1487cb1a6357ff40b9003)
+        ;
+
+        
+    
+    
+            marker_25bd096e4bcc4fd0b2e87a3b21eb6b6d.bindTooltip(
+                `<div>
+                     Information sur le parc-relais J.F. Kennedy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7401a47fe4844f3da7af97d8d132e132 = L.marker(
+                [48.0868139293, -1.6434973209],
+                {}
+            ).addTo(map_c8a2ceddd4514ac188c36b0b1a8b2283);
+        
+    
+        var custom_icon_760093bb124d4f3b8556ee764c66fd9a = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_7401a47fe4844f3da7af97d8d132e132.setIcon(custom_icon_760093bb124d4f3b8556ee764c66fd9a);
+        
+    
+        var popup_ad5cc0b4958f4530857fc7957b3a27d4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a2966379256e4b4b8ca31b2ae45e1499 = $(`<div id="html_a2966379256e4b4b8ca31b2ae45e1499" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>La Poterie</h3></p><p><h5>Informations : </h5></p><p>Rue Emile Littré</p><p><i>Places disponibles : </i>282</p><p> <i>Places disponibles (PMR) : </i>2</p></div>`)[0];
+            popup_ad5cc0b4958f4530857fc7957b3a27d4.setContent(html_a2966379256e4b4b8ca31b2ae45e1499);
+        
+
+        marker_7401a47fe4844f3da7af97d8d132e132.bindPopup(popup_ad5cc0b4958f4530857fc7957b3a27d4)
+        ;
+
+        
+    
+    
+            marker_7401a47fe4844f3da7af97d8d132e132.bindTooltip(
+                `<div>
+                     Information sur le parc-relais La Poterie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e3db4fd93f664ec4856617e4dfc326c7 = L.marker(
+                [48.11356, -1.64025],
+                {}
+            ).addTo(map_c8a2ceddd4514ac188c36b0b1a8b2283);
+        
+    
+        var custom_icon_5debc637695549f4abf50245826e75c7 = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_e3db4fd93f664ec4856617e4dfc326c7.setIcon(custom_icon_5debc637695549f4abf50245826e75c7);
+        
+    
+        var popup_d725622a74674fbab0792a2ca3a6fe43 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b3e5bb3baeb047c79bf537e37e662967 = $(`<div id="html_b3e5bb3baeb047c79bf537e37e662967" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>Les Préales</h3></p><p><h5>Informations : </h5></p><p>Rue Django Reinhardt</p><p><i>Places disponibles : </i>254</p><p> <i>Places disponibles (PMR) : </i>6</p></div>`)[0];
+            popup_d725622a74674fbab0792a2ca3a6fe43.setContent(html_b3e5bb3baeb047c79bf537e37e662967);
+        
+
+        marker_e3db4fd93f664ec4856617e4dfc326c7.bindPopup(popup_d725622a74674fbab0792a2ca3a6fe43)
+        ;
+
+        
+    
+    
+            marker_e3db4fd93f664ec4856617e4dfc326c7.bindTooltip(
+                `<div>
+                     Information sur le parc-relais Les Préales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_740780dfe7ce485da32b54e9951cd9bb = L.marker(
+                [48.0875369773, -1.6745548715],
+                {}
+            ).addTo(map_c8a2ceddd4514ac188c36b0b1a8b2283);
+        
+    
+        var custom_icon_cf50a9e6c8dc454abf7647b0b87eea3f = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_740780dfe7ce485da32b54e9951cd9bb.setIcon(custom_icon_cf50a9e6c8dc454abf7647b0b87eea3f);
+        
+    
+        var popup_6dc2e49e26d74ebca71eb6487acb6097 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7fa9d149ec45422995a42d85ee3b7a7d = $(`<div id="html_7fa9d149ec45422995a42d85ee3b7a7d" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>Henri Fréville</h3></p><p><h5>Informations : </h5></p><p>Avenue Henri Fréville</p><p><i>Places disponibles : </i>392</p><p> <i>Places disponibles (PMR) : </i>9</p></div>`)[0];
+            popup_6dc2e49e26d74ebca71eb6487acb6097.setContent(html_7fa9d149ec45422995a42d85ee3b7a7d);
+        
+
+        marker_740780dfe7ce485da32b54e9951cd9bb.bindPopup(popup_6dc2e49e26d74ebca71eb6487acb6097)
+        ;
+
+        
+    
+    
+            marker_740780dfe7ce485da32b54e9951cd9bb.bindTooltip(
+                `<div>
+                     Information sur le parc-relais Henri Fréville
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_39e2a99957c247ef9ebd45cb353b5993 = L.marker(
+                [48.1219060927, -1.7041822798],
+                {}
+            ).addTo(map_c8a2ceddd4514ac188c36b0b1a8b2283);
+        
+    
+        var custom_icon_ad03ae5a9c6c4172801a2b53f0b795eb = L.icon({"iconSize": [40, 40], "iconUrl": "https://image.flaticon.com/icons/png/512/421/421836.png"});
+        marker_39e2a99957c247ef9ebd45cb353b5993.setIcon(custom_icon_ad03ae5a9c6c4172801a2b53f0b795eb);
+        
+    
+        var popup_36c0eab519b04c709fae91e0f2284a2d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7c602405470f4b05b704e8844adeb1ee = $(`<div id="html_7c602405470f4b05b704e8844adeb1ee" style="width: 100.0%; height: 100.0%;"><p style='width: 12em; height: 100%;'><h3>Villejean-Université</h3></p><p><h5>Informations : </h5></p><p>Rue d'Alsace</p><p><i>Places disponibles : </i>359</p><p> <i>Places disponibles (PMR) : </i>9</p></div>`)[0];
+            popup_36c0eab519b04c709fae91e0f2284a2d.setContent(html_7c602405470f4b05b704e8844adeb1ee);
+        
+
+        marker_39e2a99957c247ef9ebd45cb353b5993.bindPopup(popup_36c0eab519b04c709fae91e0f2284a2d)
+        ;
+
+        
+    
+    
+            marker_39e2a99957c247ef9ebd45cb353b5993.bindTooltip(
+                `<div>
+                     Information sur le parc-relais Villejean-Université
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

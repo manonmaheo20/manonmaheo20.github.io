@@ -1,0 +1,84 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="79080546-d7fd-4e79-ae73-9e43b16222ba" data-root-id="2254"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="2346">
+          {"35ee7fc1-0296-42e4-8112-c6c07110fc86":{"roots":{"references":[{"attributes":{"grid_line_color":null,"ticker":{"id":"2266","type":"CategoricalTicker"}},"id":"2268","type":"Grid"},{"attributes":{},"id":"2284","type":"CategoricalTickFormatter"},{"attributes":{},"id":"2261","type":"CategoricalScale"},{"attributes":{"factors":["J.F. Kennedy","La Poterie","Les Pr\u00e9ales","Henri Fr\u00e9ville","Villejean-Universit\u00e9"],"palette":["#3288bd","#99d594","#e6f598","#fee08b","#fc8d59","#d53e4f"]},"id":"2277","type":"CategoricalColorMapper"},{"attributes":{"fill_color":{"field":"parc","transform":{"id":"2277","type":"CategoricalColorMapper"}},"line_color":{"value":"white"},"top":{"field":"capacite"},"width":{"value":0.7},"x":{"field":"parc"}},"id":"2279","type":"VBar"},{"attributes":{},"id":"2288","type":"UnionRenderers"},{"attributes":{},"id":"2289","type":"Selection"},{"attributes":{"data_source":{"id":"2253","type":"ColumnDataSource"},"glyph":{"id":"2279","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"name":"parc","nonselection_glyph":{"id":"2280","type":"VBar"},"selection_glyph":null,"view":{"id":"2282","type":"CDSView"}},"id":"2281","type":"GlyphRenderer"},{"attributes":{"formatter":{"id":"2286","type":"BasicTickFormatter"},"ticker":{"id":"2270","type":"BasicTicker"}},"id":"2269","type":"LinearAxis"},{"attributes":{"callback":null,"data":{"capacite":[379,304,254,401,343],"fonct":["Ferm\u00e9","Ouvert","Ouvert","Ferm\u00e9","Ferm\u00e9"],"parc":["J.F. Kennedy","La Poterie","Les Pr\u00e9ales","Henri Fr\u00e9ville","Villejean-Universit\u00e9"]},"selected":{"id":"2289","type":"Selection"},"selection_policy":{"id":"2288","type":"UnionRenderers"}},"id":"2253","type":"ColumnDataSource"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"2274","type":"HoverTool"}]},"id":"2275","type":"Toolbar"},{"attributes":{},"id":"2270","type":"BasicTicker"},{"attributes":{"callback":null,"start":0},"id":"2259","type":"DataRange1d"},{"attributes":{"source":{"id":"2253","type":"ColumnDataSource"}},"id":"2282","type":"CDSView"},{"attributes":{"callback":null,"factors":["J.F. Kennedy","La Poterie","Les Pr\u00e9ales","Henri Fr\u00e9ville","Villejean-Universit\u00e9"]},"id":"2257","type":"FactorRange"},{"attributes":{},"id":"2263","type":"LinearScale"},{"attributes":{},"id":"2286","type":"BasicTickFormatter"},{"attributes":{"callback":null,"tooltips":"@fonct"},"id":"2274","type":"HoverTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"capacite"},"width":{"value":0.7},"x":{"field":"parc"}},"id":"2280","type":"VBar"},{"attributes":{"below":[{"id":"2265","type":"CategoricalAxis"}],"center":[{"id":"2268","type":"Grid"},{"id":"2273","type":"Grid"}],"left":[{"id":"2269","type":"LinearAxis"}],"plot_height":401,"renderers":[{"id":"2281","type":"GlyphRenderer"}],"title":{"id":"2255","type":"Title"},"toolbar":{"id":"2275","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"2257","type":"FactorRange"},"x_scale":{"id":"2261","type":"CategoricalScale"},"y_range":{"id":"2259","type":"DataRange1d"},"y_scale":{"id":"2263","type":"LinearScale"}},"id":"2254","subtype":"Figure","type":"Plot"},{"attributes":{"formatter":{"id":"2284","type":"CategoricalTickFormatter"},"ticker":{"id":"2266","type":"CategoricalTicker"}},"id":"2265","type":"CategoricalAxis"},{"attributes":{},"id":"2266","type":"CategoricalTicker"},{"attributes":{"dimension":1,"ticker":{"id":"2270","type":"BasicTicker"}},"id":"2273","type":"Grid"},{"attributes":{"text":"Etat et capacit\u00e9 actuelle des parcs-relais"},"id":"2255","type":"Title"}],"root_ids":["2254"]},"title":"Bokeh Application","version":"1.3.4"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('2346').textContent;
+                  var render_items = [{"docid":"35ee7fc1-0296-42e4-8112-c6c07110fc86","roots":{"2254":"79080546-d7fd-4e79-ae73-9e43b16222ba"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
