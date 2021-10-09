@@ -20,6 +20,7 @@ https://manon-maheo.shinyapps.io/climat_test/
 - Extraction des données de la STAR (réseau de transport en commun de Rennes) sous le langage Python à l’aide d’API
 - Utilisation de modules de cartographie en python 
 - Conception d’un site web sous les langages HTML et CSS
-<br><br>*voir le dossier ter_star*
+<br><br>
+*voir le dossier ter_star*
 
 ***autres projets visibles sur mon LinkedIn https://www.linkedin.com/in/manonmaheo/***
