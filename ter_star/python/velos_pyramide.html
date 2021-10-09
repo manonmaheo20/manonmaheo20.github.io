@@ -1,0 +1,84 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="91497b19-ff34-456e-a8b5-2835f26cb2cf" data-root-id="1231"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1365">
+          {"12319ead-0815-4911-af45-27f2e948884b":{"roots":{"references":[{"attributes":{},"id":"1251","type":"PanTool"},{"attributes":{},"id":"1238","type":"LinearScale"},{"attributes":{"text":"Emplacements et v\u00e9los disponibles dans chaque station v\u00e9los"},"id":"1232","type":"Title"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"height":{"value":0.9},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"right":{"field":"velos"},"y":{"field":"station"}},"id":"1267","type":"HBar"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1251","type":"PanTool"},{"id":"1252","type":"WheelZoomTool"},{"id":"1253","type":"BoxZoomTool"},{"id":"1254","type":"SaveTool"},{"id":"1255","type":"ResetTool"},{"id":"1256","type":"HelpTool"},{"id":"1264","type":"HoverTool"}]},"id":"1257","type":"Toolbar"},{"attributes":{},"id":"1248","type":"CategoricalTicker"},{"attributes":{"label":{"value":"V\u00e9los disponibles"},"renderers":[{"id":"1268","type":"GlyphRenderer"}]},"id":"1277","type":"LegendItem"},{"attributes":{"fill_color":{"value":"#FFBB00"},"height":{"value":0.9},"line_color":{"value":"#FFBB00"},"right":{"field":"emplacements_neg"},"y":{"field":"station"}},"id":"1279","type":"HBar"},{"attributes":{},"id":"1240","type":"CategoricalScale"},{"attributes":{},"id":"1256","type":"HelpTool"},{"attributes":{"formatter":{"id":"1273","type":"BasicTickFormatter"},"minor_tick_line_color":{"value":null},"ticker":{"id":"1243","type":"BasicTicker"},"visible":false},"id":"1242","type":"LinearAxis"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1275","type":"BoxAnnotation"},{"attributes":{},"id":"1255","type":"ResetTool"},{"attributes":{"formatter":{"id":"1271","type":"CategoricalTickFormatter"},"minor_tick_line_color":{"value":null},"ticker":{"id":"1248","type":"CategoricalTicker"}},"id":"1247","type":"CategoricalAxis"},{"attributes":{"items":[{"id":"1277","type":"LegendItem"},{"id":"1291","type":"LegendItem"}]},"id":"1276","type":"Legend"},{"attributes":{"ticker":{"id":"1243","type":"BasicTicker"}},"id":"1246","type":"Grid"},{"attributes":{"fill_color":{"value":"#008383"},"height":{"value":0.9},"line_color":{"value":"#008383"},"right":{"field":"velos"},"y":{"field":"station"}},"id":"1266","type":"HBar"},{"attributes":{"source":{"id":"1230","type":"ColumnDataSource"}},"id":"1282","type":"CDSView"},{"attributes":{},"id":"1290","type":"Selection"},{"attributes":{},"id":"1254","type":"SaveTool"},{"attributes":{"dimension":1,"grid_line_color":null,"ticker":{"id":"1248","type":"CategoricalTicker"}},"id":"1250","type":"Grid"},{"attributes":{"data_source":{"id":"1230","type":"ColumnDataSource"},"glyph":{"id":"1266","type":"HBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1267","type":"HBar"},"selection_glyph":null,"view":{"id":"1269","type":"CDSView"}},"id":"1268","type":"GlyphRenderer"},{"attributes":{"label":{"value":"Emplacements disponibles"},"renderers":[{"id":"1281","type":"GlyphRenderer"}]},"id":"1291","type":"LegendItem"},{"attributes":{"below":[{"id":"1242","type":"LinearAxis"}],"center":[{"id":"1246","type":"Grid"},{"id":"1250","type":"Grid"},{"id":"1276","type":"Legend"}],"left":[{"id":"1247","type":"CategoricalAxis"}],"outline_line_color":{"value":null},"plot_height":1000,"renderers":[{"id":"1268","type":"GlyphRenderer"},{"id":"1281","type":"GlyphRenderer"}],"title":{"id":"1232","type":"Title"},"toolbar":{"id":"1257","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"1234","type":"DataRange1d"},"x_scale":{"id":"1238","type":"LinearScale"},"y_range":{"id":"1236","type":"FactorRange"},"y_scale":{"id":"1240","type":"CategoricalScale"}},"id":"1231","subtype":"Figure","type":"Plot"},{"attributes":{"overlay":{"id":"1275","type":"BoxAnnotation"}},"id":"1253","type":"BoxZoomTool"},{"attributes":{"callback":null,"data":{"emplacements":[16,24,24,24,20,24,18,18,16,28,20,24,24,26,28,18,20,20,30,28,16,28,20,20,24,16,30,18,14,25,24,22,16,12,20,24,13,45,39,26,18,24,34,24,30,39,25,24,16,16,20,29,26,27,18],"emplacements_neg":[-16,-24,-24,-24,-20,-24,-18,-18,-16,-28,-20,-24,-24,-26,-28,-18,-20,-20,-30,-28,-16,-28,-20,-20,-24,-16,-30,-18,-14,-25,-24,-22,-16,-12,-20,-24,-13,-45,-39,-26,-18,-24,-34,-24,-30,-39,-25,-24,-16,-16,-20,-29,-26,-27,-18],"station":["Mus\u00e9e Beaux-Arts","Champs Libres","La Cri\u00e9e","Brest - Verdun","Marbeuf","Plaine de Baud","Gros-Ch\u00eane","Painlev\u00e9","Turmel","La Poterie","Pont de Strasbourg","Mairie","Sainte-Anne","H\u00f4tel Dieu","TNB","Pl\u00e9lo Colombier","Pont de Nantes","La Rotonde","Ch\u00e8ques Postaux","Anatole France","Paul Bert","Pontchaillou M\u00e9tro","Pierre Martin","Robidou","Cit\u00e9 Judiciaire","Metz - S\u00e9vign\u00e9","Beaulieu Chimie","Beaulieu Restau U","Berger","Cucill\u00e9","Jacques Cartier","Clemenceau","Binquenais","Sainte-Th\u00e9r\u00e8se","La Courrouze","Armorique","Gare Sud","R\u00e9publique","Place Hoche","Fac de Droit","Saint-Georges","La\u00ebnnec","Gares - Solf\u00e9rino","Charles de Gaulle","Oberthur","Place de Bretagne","Les Lices","Horizons","Gu\u00e9henno - Foug\u00e8res","Voltaire","Pont de Ch\u00e2teaudun","Auberge de Jeunesse","Villejean-Universit\u00e9","Pr\u00e9fecture","Champs Manceaux"],"velos":[10,5,6,12,13,7,12,6,9,11,7,10,13,18,6,0,9,7,24,15,3,10,11,4,8,4,7,10,9,16,10,6,4,4,6,9,6,21,19,12,11,13,14,16,10,11,14,9,10,7,3,16,7,15,6]},"selected":{"id":"1290","type":"Selection"},"selection_policy":{"id":"1289","type":"UnionRenderers"}},"id":"1230","type":"ColumnDataSource"},{"attributes":{},"id":"1289","type":"UnionRenderers"},{"attributes":{"source":{"id":"1230","type":"ColumnDataSource"}},"id":"1269","type":"CDSView"},{"attributes":{"data_source":{"id":"1230","type":"ColumnDataSource"},"glyph":{"id":"1279","type":"HBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1280","type":"HBar"},"selection_glyph":null,"view":{"id":"1282","type":"CDSView"}},"id":"1281","type":"GlyphRenderer"},{"attributes":{},"id":"1271","type":"CategoricalTickFormatter"},{"attributes":{"callback":null,"tooltips":[["Emplacements disponibles ","@emplacements"],["V\u00e9los disponibles ","@velos"]]},"id":"1264","type":"HoverTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"height":{"value":0.9},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"right":{"field":"emplacements_neg"},"y":{"field":"station"}},"id":"1280","type":"HBar"},{"attributes":{},"id":"1273","type":"BasicTickFormatter"},{"attributes":{"callback":null},"id":"1234","type":"DataRange1d"},{"attributes":{},"id":"1243","type":"BasicTicker"},{"attributes":{},"id":"1252","type":"WheelZoomTool"},{"attributes":{"callback":null,"factors":["Mus\u00e9e Beaux-Arts","Champs Libres","La Cri\u00e9e","Brest - Verdun","Marbeuf","Plaine de Baud","Gros-Ch\u00eane","Painlev\u00e9","Turmel","La Poterie","Pont de Strasbourg","Mairie","Sainte-Anne","H\u00f4tel Dieu","TNB","Pl\u00e9lo Colombier","Pont de Nantes","La Rotonde","Ch\u00e8ques Postaux","Anatole France","Paul Bert","Pontchaillou M\u00e9tro","Pierre Martin","Robidou","Cit\u00e9 Judiciaire","Metz - S\u00e9vign\u00e9","Beaulieu Chimie","Beaulieu Restau U","Berger","Cucill\u00e9","Jacques Cartier","Clemenceau","Binquenais","Sainte-Th\u00e9r\u00e8se","La Courrouze","Armorique","Gare Sud","R\u00e9publique","Place Hoche","Fac de Droit","Saint-Georges","La\u00ebnnec","Gares - Solf\u00e9rino","Charles de Gaulle","Oberthur","Place de Bretagne","Les Lices","Horizons","Gu\u00e9henno - Foug\u00e8res","Voltaire","Pont de Ch\u00e2teaudun","Auberge de Jeunesse","Villejean-Universit\u00e9","Pr\u00e9fecture","Champs Manceaux"],"range_padding":0.1},"id":"1236","type":"FactorRange"}],"root_ids":["1231"]},"title":"Bokeh Application","version":"1.3.4"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('1365').textContent;
+                  var render_items = [{"docid":"12319ead-0815-4911-af45-27f2e948884b","roots":{"1231":"91497b19-ff34-456e-a8b5-2835f26cb2cf"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        embed_document(root);
+                        clearInterval(timer);
+                      }
+                      attempts++;
+                      if (attempts > 100) {
+                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        clearInterval(timer);
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

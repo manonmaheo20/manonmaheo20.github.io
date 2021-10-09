@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.5.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_78f7bfcb9fd2408d95d1b9c0a2277c39 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_78f7bfcb9fd2408d95d1b9c0a2277c39" ></div>
+        
+</body>
+<script>    
+    
+            var map_78f7bfcb9fd2408d95d1b9c0a2277c39 = L.map(
+                "map_78f7bfcb9fd2408d95d1b9c0a2277c39",
+                {
+                    center: [48.0833, -1.6833],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6d541aa954c940ebbeaa9a8aceb84468 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+            var marker_b0a559b23af843f6b40bc506d30fa4cc = L.marker(
+                [48.112385, -1.674417],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_0edfd93399db4c7cad63aedb2ec620e6 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_b0a559b23af843f6b40bc506d30fa4cc.setIcon(custom_icon_0edfd93399db4c7cad63aedb2ec620e6);
+        
+    
+        var popup_32e543dcb0da4872baf6a99918bc554a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2da658027c594f4597c1e81e9638d109 = $(`<div id="html_2da658027c594f4597c1e81e9638d109" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Saint-Georges </h4></p><p><h5>Informations : </h5></p><p> 21 Rue Victor Hugo</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 10 </p><p> Nombre de places disponibles : 18</p> <p> Station la plus proche : Musée Beaux-Arts à 310.6 mètres</p> </center></div>`)[0];
+            popup_32e543dcb0da4872baf6a99918bc554a.setContent(html_2da658027c594f4597c1e81e9638d109);
+        
+
+        marker_b0a559b23af843f6b40bc506d30fa4cc.bindPopup(popup_32e543dcb0da4872baf6a99918bc554a)
+        ;
+
+        
+    
+    
+            marker_b0a559b23af843f6b40bc506d30fa4cc.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Saint-Georges
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_59ca960e36f94d9aa1032cc23e92a44f = L.marker(
+                [48.112766, -1.685037],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_5a2b5b7421a9424480223a8a2cd1bc60 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_59ca960e36f94d9aa1032cc23e92a44f.setIcon(custom_icon_5a2b5b7421a9424480223a8a2cd1bc60);
+        
+    
+        var popup_495e62b010664a299db2743f400375be = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b531fc813f364d59ba0d7d82ff691a1d = $(`<div id="html_b531fc813f364d59ba0d7d82ff691a1d" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Les Lices </h4></p><p><h5>Informations : </h5></p><p> 9 Rue de Juillet</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 14 </p><p> Nombre de places disponibles : 25</p> <p> Station la plus proche : Horizons à 343.3 mètres</p> </center></div>`)[0];
+            popup_495e62b010664a299db2743f400375be.setContent(html_b531fc813f364d59ba0d7d82ff691a1d);
+        
+
+        marker_59ca960e36f94d9aa1032cc23e92a44f.bindPopup(popup_495e62b010664a299db2743f400375be)
+        ;
+
+        
+    
+    
+            marker_59ca960e36f94d9aa1032cc23e92a44f.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Les Lices
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1601e8f3718d4a11aefdd628d2d2e172 = L.marker(
+                [48.119809, -1.66635],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_ea499bfa202d472a894742f75d70fd74 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_1601e8f3718d4a11aefdd628d2d2e172.setIcon(custom_icon_ea499bfa202d472a894742f75d70fd74);
+        
+    
+        var popup_1bc02ff7786148a29cce747c51f747de = L.popup({"maxWidth": "100%"});
+
+        
+            var html_45a8b1877c0e4883bda06062bc316877 = $(`<div id="html_45a8b1877c0e4883bda06062bc316877" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Guéhenno - Fougères </h4></p><p><h5>Informations : </h5></p><p> 121 Rue de Fougères</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 9 </p><p> Nombre de places disponibles : 16</p> <p> Station la plus proche : Fac de Droit à 373.8 mètres</p> </center></div>`)[0];
+            popup_1bc02ff7786148a29cce747c51f747de.setContent(html_45a8b1877c0e4883bda06062bc316877);
+        
+
+        marker_1601e8f3718d4a11aefdd628d2d2e172.bindPopup(popup_1bc02ff7786148a29cce747c51f747de)
+        ;
+
+        
+    
+    
+            marker_1601e8f3718d4a11aefdd628d2d2e172.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Guéhenno - Fougères
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c93297ecf6c349bab7686873f5578d43 = L.marker(
+                [48.104771, -1.68411],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_a38edabc304f4af09f88e7a002183391 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_c93297ecf6c349bab7686873f5578d43.setIcon(custom_icon_a38edabc304f4af09f88e7a002183391);
+        
+    
+        var popup_680425d302d2493386e9f1aafd8d63ae = L.popup({"maxWidth": "100%"});
+
+        
+            var html_700f3eab7664453eb8120ee18fae149b = $(`<div id="html_700f3eab7664453eb8120ee18fae149b" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Cité Judiciaire </h4></p><p><h5>Informations : </h5></p><p> 20 Rue du Papier Timbré</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 8 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : La Rotonde à 288.2 mètres</p> </center></div>`)[0];
+            popup_680425d302d2493386e9f1aafd8d63ae.setContent(html_700f3eab7664453eb8120ee18fae149b);
+        
+
+        marker_c93297ecf6c349bab7686873f5578d43.bindPopup(popup_680425d302d2493386e9f1aafd8d63ae)
+        ;
+
+        
+    
+    
+            marker_c93297ecf6c349bab7686873f5578d43.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Cité Judiciaire
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_17d0e0e92f58443ab0e46d72cc72e78e = L.marker(
+                [48.128453, -1.694032],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_897ff1b8bc2546628865a68a671f43df = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_17d0e0e92f58443ab0e46d72cc72e78e.setIcon(custom_icon_897ff1b8bc2546628865a68a671f43df);
+        
+    
+        var popup_4fdbdb9d69a84b888ce04e5f9fb2dd8b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_83b1ccec60704aaca9f6922de4fa9b88 = $(`<div id="html_83b1ccec60704aaca9f6922de4fa9b88" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Préfecture </h4></p><p><h5>Informations : </h5></p><p> 1 Avenue de Cucillé</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 15 </p><p> Nombre de places disponibles : 27</p> <p> Station la plus proche : Cucillé à 307.2 mètres</p> </center></div>`)[0];
+            popup_4fdbdb9d69a84b888ce04e5f9fb2dd8b.setContent(html_83b1ccec60704aaca9f6922de4fa9b88);
+        
+
+        marker_17d0e0e92f58443ab0e46d72cc72e78e.bindPopup(popup_4fdbdb9d69a84b888ce04e5f9fb2dd8b)
+        ;
+
+        
+    
+    
+            marker_17d0e0e92f58443ab0e46d72cc72e78e.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Préfecture
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e1733a9ec14e487c875fb5936cb01fe2 = L.marker(
+                [48.091114, -1.682284],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_c56b6fd0cf5949d39b39e483245a7f68 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_e1733a9ec14e487c875fb5936cb01fe2.setIcon(custom_icon_c56b6fd0cf5949d39b39e483245a7f68);
+        
+    
+        var popup_2e0f889aec7c40f1911fba8fcc96f3b8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3d0bb33de9484945bdaf239d4f5a82cd = $(`<div id="html_3d0bb33de9484945bdaf239d4f5a82cd" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Champs Manceaux </h4></p><p><h5>Informations : </h5></p><p> 14 Rue Louis et René Moine</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 6 </p><p> Nombre de places disponibles : 18</p> <p> Station la plus proche : Clemenceau à 654.9 mètres</p> </center></div>`)[0];
+            popup_2e0f889aec7c40f1911fba8fcc96f3b8.setContent(html_3d0bb33de9484945bdaf239d4f5a82cd);
+        
+
+        marker_e1733a9ec14e487c875fb5936cb01fe2.bindPopup(popup_2e0f889aec7c40f1911fba8fcc96f3b8)
+        ;
+
+        
+    
+    
+            marker_e1733a9ec14e487c875fb5936cb01fe2.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Champs Manceaux
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_303969e6f5854e259449d73b29f9e861 = L.marker(
+                [48.117596, -1.677849],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_24970fb223e14ddc95cd0bb455a74c34 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_303969e6f5854e259449d73b29f9e861.setIcon(custom_icon_24970fb223e14ddc95cd0bb455a74c34);
+        
+    
+        var popup_3d16775d50f442bca1900fb1457f3d67 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e39a8b4b239b402cb2842f36311b8738 = $(`<div id="html_e39a8b4b239b402cb2842f36311b8738" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Hôtel Dieu </h4></p><p><h5>Informations : </h5></p><p> 2 Rue de la Cochardière</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 18 </p><p> Nombre de places disponibles : 26</p> <p> Station la plus proche : Place Hoche à 286.3 mètres</p> </center></div>`)[0];
+            popup_3d16775d50f442bca1900fb1457f3d67.setContent(html_e39a8b4b239b402cb2842f36311b8738);
+        
+
+        marker_303969e6f5854e259449d73b29f9e861.bindPopup(popup_3d16775d50f442bca1900fb1457f3d67)
+        ;
+
+        
+    
+    
+            marker_303969e6f5854e259449d73b29f9e861.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Hôtel Dieu
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2399e92b0ddc459d96cd6892b63019ea = L.marker(
+                [48.107748, -1.673711],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_8bc97779504748b1878f3e5611c6b55b = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_2399e92b0ddc459d96cd6892b63019ea.setIcon(custom_icon_8bc97779504748b1878f3e5611c6b55b);
+        
+    
+        var popup_cef46f2675c44cc18d9357594bc6be61 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_083fe2062a9c489fb7e74f0e3e328199 = $(`<div id="html_083fe2062a9c489fb7e74f0e3e328199" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> TNB </h4></p><p><h5>Informations : </h5></p><p> 1 Square de Kergus</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 6 </p><p> Nombre de places disponibles : 28</p> <p> Station la plus proche : Musée Beaux-Arts à 207.9 mètres</p> </center></div>`)[0];
+            popup_cef46f2675c44cc18d9357594bc6be61.setContent(html_083fe2062a9c489fb7e74f0e3e328199);
+        
+
+        marker_2399e92b0ddc459d96cd6892b63019ea.bindPopup(popup_cef46f2675c44cc18d9357594bc6be61)
+        ;
+
+        
+    
+    
+            marker_2399e92b0ddc459d96cd6892b63019ea.bindTooltip(
+                `<div>
+                     Information sur la station de vélos TNB
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2dcc3f1c92fc4c36be24a842e4fbfe39 = L.marker(
+                [48.106125, -1.680482],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_6887d70834cc4be3b4e9bed44059cb0c = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_2dcc3f1c92fc4c36be24a842e4fbfe39.setIcon(custom_icon_6887d70834cc4be3b4e9bed44059cb0c);
+        
+    
+        var popup_6ec0472c850547ae8db3244a34d85fb3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_201a8a03dbc04f4183f6a2d6c2b23971 = $(`<div id="html_201a8a03dbc04f4183f6a2d6c2b23971" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Plélo Colombier </h4></p><p><h5>Informations : </h5></p><p> 1 Rue du Puits Mauger</p><p><strong> Etat : En panne </strong></p><p>Nombre  de vélos disponibles actuellement : 0 </p><p> Nombre de places disponibles : 18</p> <p> Station la plus proche : La Criée à 169.5 mètres</p> </center></div>`)[0];
+            popup_6ec0472c850547ae8db3244a34d85fb3.setContent(html_201a8a03dbc04f4183f6a2d6c2b23971);
+        
+
+        marker_2dcc3f1c92fc4c36be24a842e4fbfe39.bindPopup(popup_6ec0472c850547ae8db3244a34d85fb3)
+        ;
+
+        
+    
+    
+            marker_2dcc3f1c92fc4c36be24a842e4fbfe39.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Plélo Colombier
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9d439d0d966243f69ac6fef9da2d5028 = L.marker(
+                [48.107626, -1.680085],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_ba4211abe5da4f40b128722869f15097 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_9d439d0d966243f69ac6fef9da2d5028.setIcon(custom_icon_ba4211abe5da4f40b128722869f15097);
+        
+    
+        var popup_6e0893c2e33246bf947f8e7d9a076641 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_87d99cae86114e369062cc88ff75159c = $(`<div id="html_87d99cae86114e369062cc88ff75159c" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> La Criée </h4></p><p><h5>Informations : </h5></p><p> 32 Rue de Nemours</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 8 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : Plélo Colombier à 169.5 mètres</p> </center></div>`)[0];
+            popup_6e0893c2e33246bf947f8e7d9a076641.setContent(html_87d99cae86114e369062cc88ff75159c);
+        
+
+        marker_9d439d0d966243f69ac6fef9da2d5028.bindPopup(popup_6e0893c2e33246bf947f8e7d9a076641)
+        ;
+
+        
+    
+    
+            marker_9d439d0d966243f69ac6fef9da2d5028.bindTooltip(
+                `<div>
+                     Information sur la station de vélos La Criée
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_91ac17cafcea4e60ab9dc8bbf3df591a = L.marker(
+                [48.111621, -1.689318],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_ca338ef5dcf748499731f4d61b0ff1c3 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_91ac17cafcea4e60ab9dc8bbf3df591a.setIcon(custom_icon_ca338ef5dcf748499731f4d61b0ff1c3);
+        
+    
+        var popup_a4f3ae839f214c3f8e4581732601905b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7eba13abb1524d6682d14bcfb41b658b = $(`<div id="html_7eba13abb1524d6682d14bcfb41b658b" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Horizons </h4></p><p><h5>Informations : </h5></p><p> 6 Rue de Brest</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 9 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : Brest - Verdun à 331.9 mètres</p> </center></div>`)[0];
+            popup_a4f3ae839f214c3f8e4581732601905b.setContent(html_7eba13abb1524d6682d14bcfb41b658b);
+        
+
+        marker_91ac17cafcea4e60ab9dc8bbf3df591a.bindPopup(popup_a4f3ae839f214c3f8e4581732601905b)
+        ;
+
+        
+    
+    
+            marker_91ac17cafcea4e60ab9dc8bbf3df591a.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Horizons
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_30c13d5936804bb3a93dd45537e99b0d = L.marker(
+                [48.120876, -1.681876],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_1ade6c0a92614babbf440daf71454514 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_30c13d5936804bb3a93dd45537e99b0d.setIcon(custom_icon_1ade6c0a92614babbf440daf71454514);
+        
+    
+        var popup_9a3a231ac6a44464be4d49ab9b20c94a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d9cadf76b2844d749c09796f881bf3f0 = $(`<div id="html_d9cadf76b2844d749c09796f881bf3f0" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Auberge de Jeunesse </h4></p><p><h5>Informations : </h5></p><p> 83 Rue de Saint-Malo</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 15 </p><p> Nombre de places disponibles : 29</p> <p> Station la plus proche : Hôtel Dieu à 472.1 mètres</p> </center></div>`)[0];
+            popup_9a3a231ac6a44464be4d49ab9b20c94a.setContent(html_d9cadf76b2844d749c09796f881bf3f0);
+        
+
+        marker_30c13d5936804bb3a93dd45537e99b0d.bindPopup(popup_9a3a231ac6a44464be4d49ab9b20c94a)
+        ;
+
+        
+    
+    
+            marker_30c13d5936804bb3a93dd45537e99b0d.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Auberge de Jeunesse
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_295c39e791584cfb80e888f960adf90e = L.marker(
+                [48.115993, -1.658258],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_7ad973296c4541c4b8531c2bccb93853 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_295c39e791584cfb80e888f960adf90e.setIcon(custom_icon_7ad973296c4541c4b8531c2bccb93853);
+        
+    
+        var popup_58d9068973a74b9a9f3b998d59bbaec4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0f2ad2e1f6b24d15a1491eedee545a7c = $(`<div id="html_0f2ad2e1f6b24d15a1491eedee545a7c" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Metz - Sévigné </h4></p><p><h5>Informations : </h5></p><p> 28 Boulevard de Metz</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 4 </p><p> Nombre de places disponibles : 16</p> <p> Station la plus proche : Oberthur à 381.4 mètres</p> </center></div>`)[0];
+            popup_58d9068973a74b9a9f3b998d59bbaec4.setContent(html_0f2ad2e1f6b24d15a1491eedee545a7c);
+        
+
+        marker_295c39e791584cfb80e888f960adf90e.bindPopup(popup_58d9068973a74b9a9f3b998d59bbaec4)
+        ;
+
+        
+    
+    
+            marker_295c39e791584cfb80e888f960adf90e.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Metz - Sévigné
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0a3a851ec0734ff3a6275e20a561df84 = L.marker(
+                [48.121076, -1.704122],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_dfbbdcd79588496eaab8efc68766957b = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_0a3a851ec0734ff3a6275e20a561df84.setIcon(custom_icon_dfbbdcd79588496eaab8efc68766957b);
+        
+    
+        var popup_ebfe24817e08450b88498e9012b0b305 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8810aa9e772f4bc48b4d7ac5df495772 = $(`<div id="html_8810aa9e772f4bc48b4d7ac5df495772" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Villejean-Université </h4></p><p><h5>Informations : </h5></p><p>  Place Recteur Henri Le Moal</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 5 </p><p> Nombre de places disponibles : 26</p> <p> Station la plus proche : Berger à 534.5 mètres</p> </center></div>`)[0];
+            popup_ebfe24817e08450b88498e9012b0b305.setContent(html_8810aa9e772f4bc48b4d7ac5df495772);
+        
+
+        marker_0a3a851ec0734ff3a6275e20a561df84.bindPopup(popup_ebfe24817e08450b88498e9012b0b305)
+        ;
+
+        
+    
+    
+            marker_0a3a851ec0734ff3a6275e20a561df84.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Villejean-Université
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_46b4e282912947c19234b27dfc7cd9dc = L.marker(
+                [48.116314, -1.705097],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_6e784cc8e9a249e69e333d27c00a928c = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_46b4e282912947c19234b27dfc7cd9dc.setIcon(custom_icon_6e784cc8e9a249e69e333d27c00a928c);
+        
+    
+        var popup_c0c9c05606e040808c762d8877ecd83e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_272864e43bc64056bf739edc26b279d0 = $(`<div id="html_272864e43bc64056bf739edc26b279d0" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Berger </h4></p><p><h5>Informations : </h5></p><p> 1 Avenue Gaston Berger</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 9 </p><p> Nombre de places disponibles : 14</p> <p> Station la plus proche : Villejean-Université à 534.5 mètres</p> </center></div>`)[0];
+            popup_c0c9c05606e040808c762d8877ecd83e.setContent(html_272864e43bc64056bf739edc26b279d0);
+        
+
+        marker_46b4e282912947c19234b27dfc7cd9dc.bindPopup(popup_c0c9c05606e040808c762d8877ecd83e)
+        ;
+
+        
+    
+    
+            marker_46b4e282912947c19234b27dfc7cd9dc.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Berger
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bed7d88377c146549d99406609bcbc51 = L.marker(
+                [48.093292, -1.674116],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_04683f93e07144a98612c1db6030933b = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_bed7d88377c146549d99406609bcbc51.setIcon(custom_icon_04683f93e07144a98612c1db6030933b);
+        
+    
+        var popup_18b9ff983187499b99bb8d221b383172 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f90074e8e259426e8d199583fd994ded = $(`<div id="html_f90074e8e259426e8d199583fd994ded" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Clemenceau </h4></p><p><h5>Informations : </h5></p><p> 1 Avenue Henri Fréville</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 8 </p><p> Nombre de places disponibles : 22</p> <p> Station la plus proche : Jacques Cartier à 471.8 mètres</p> </center></div>`)[0];
+            popup_18b9ff983187499b99bb8d221b383172.setContent(html_f90074e8e259426e8d199583fd994ded);
+        
+
+        marker_bed7d88377c146549d99406609bcbc51.bindPopup(popup_18b9ff983187499b99bb8d221b383172)
+        ;
+
+        
+    
+    
+            marker_bed7d88377c146549d99406609bcbc51.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Clemenceau
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f5c0d0207b5244b6b9c93343a2de9b3b = L.marker(
+                [48.122147, -1.650808],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_a832dd75d2ef46969f0dad92dae88fd2 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_f5c0d0207b5244b6b9c93343a2de9b3b.setIcon(custom_icon_a832dd75d2ef46969f0dad92dae88fd2);
+        
+    
+        var popup_702a5c0c411a4dcba8b9df744d8ff32e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_83f1a6fde6df4e2fb217e0c7de05b42a = $(`<div id="html_83f1a6fde6df4e2fb217e0c7de05b42a" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Turmel </h4></p><p><h5>Informations : </h5></p><p> 132 boulevard de Vitré</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 9 </p><p> Nombre de places disponibles : 16</p> <p> Station la plus proche : Painlevé à 731.1 mètres</p> </center></div>`)[0];
+            popup_702a5c0c411a4dcba8b9df744d8ff32e.setContent(html_83f1a6fde6df4e2fb217e0c7de05b42a);
+        
+
+        marker_f5c0d0207b5244b6b9c93343a2de9b3b.bindPopup(popup_702a5c0c411a4dcba8b9df744d8ff32e)
+        ;
+
+        
+    
+    
+            marker_f5c0d0207b5244b6b9c93343a2de9b3b.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Turmel
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e1289bff3ec943b8ae820b1b5f16db77 = L.marker(
+                [48.110026, -1.678037],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_2b45abe04cf14738b27d8d93549c4e92 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_e1289bff3ec943b8ae820b1b5f16db77.setIcon(custom_icon_2b45abe04cf14738b27d8d93549c4e92);
+        
+    
+        var popup_a484ffadf37f469ea1cc03ebe97002aa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_651582f792e24fb897ee65f95d045a34 = $(`<div id="html_651582f792e24fb897ee65f95d045a34" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> République </h4></p><p><h5>Informations : </h5></p><p> 19 Quai Lamartine</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 22 </p><p> Nombre de places disponibles : 45</p> <p> Station la plus proche : Mairie à 185.6 mètres</p> </center></div>`)[0];
+            popup_a484ffadf37f469ea1cc03ebe97002aa.setContent(html_651582f792e24fb897ee65f95d045a34);
+        
+
+        marker_e1289bff3ec943b8ae820b1b5f16db77.bindPopup(popup_a484ffadf37f469ea1cc03ebe97002aa)
+        ;
+
+        
+    
+    
+            marker_e1289bff3ec943b8ae820b1b5f16db77.bindTooltip(
+                `<div>
+                     Information sur la station de vélos République
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c684d5fc9afe4458b89bc37e316f87fc = L.marker(
+                [48.111624, -1.678757],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_54f08cb4ebd64ebab0a7ee8f736a71d9 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_c684d5fc9afe4458b89bc37e316f87fc.setIcon(custom_icon_54f08cb4ebd64ebab0a7ee8f736a71d9);
+        
+    
+        var popup_4ee8e247ceee4c15985498a2aed2a34d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0ee9d383357f499d9ccc9b2ea4494eec = $(`<div id="html_0ee9d383357f499d9ccc9b2ea4494eec" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Mairie </h4></p><p><h5>Informations : </h5></p><p> 12 Galerie du Théâtre</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 10 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : République à 185.6 mètres</p> </center></div>`)[0];
+            popup_4ee8e247ceee4c15985498a2aed2a34d.setContent(html_0ee9d383357f499d9ccc9b2ea4494eec);
+        
+
+        marker_c684d5fc9afe4458b89bc37e316f87fc.bindPopup(popup_4ee8e247ceee4c15985498a2aed2a34d)
+        ;
+
+        
+    
+    
+            marker_c684d5fc9afe4458b89bc37e316f87fc.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Mairie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_edabb4295122496997dce8387b63caf9 = L.marker(
+                [48.115074, -1.677073],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_9c769d9168ae40d7b9eb68a1c6f41712 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_edabb4295122496997dce8387b63caf9.setIcon(custom_icon_9c769d9168ae40d7b9eb68a1c6f41712);
+        
+    
+        var popup_365c53ee7e534d159be139bfb0b34691 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e5c4fda18b2b4032b1dec5f926a77431 = $(`<div id="html_e5c4fda18b2b4032b1dec5f926a77431" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Place Hoche </h4></p><p><h5>Informations : </h5></p><p> 12 Place Hoche</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 20 </p><p> Nombre de places disponibles : 39</p> <p> Station la plus proche : Sainte-Anne à 269.9 mètres</p> </center></div>`)[0];
+            popup_365c53ee7e534d159be139bfb0b34691.setContent(html_e5c4fda18b2b4032b1dec5f926a77431);
+        
+
+        marker_edabb4295122496997dce8387b63caf9.bindPopup(popup_365c53ee7e534d159be139bfb0b34691)
+        ;
+
+        
+    
+    
+            marker_edabb4295122496997dce8387b63caf9.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Place Hoche
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_13f093fd0a56413c8923e06a7359a749 = L.marker(
+                [48.118172, -1.670735],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_146f32531e8a4470a9009d5f737bf022 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_13f093fd0a56413c8923e06a7359a749.setIcon(custom_icon_146f32531e8a4470a9009d5f737bf022);
+        
+    
+        var popup_751a32ac879a45a3a4ef7a866b3034eb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bf63b48f9f0c4a3884183c82d67a300e = $(`<div id="html_bf63b48f9f0c4a3884183c82d67a300e" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Fac de Droit </h4></p><p><h5>Informations : </h5></p><p> 46 Rue Jean Guéhenno</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 11 </p><p> Nombre de places disponibles : 26</p> <p> Station la plus proche : Guéhenno - Fougères à 373.8 mètres</p> </center></div>`)[0];
+            popup_751a32ac879a45a3a4ef7a866b3034eb.setContent(html_bf63b48f9f0c4a3884183c82d67a300e);
+        
+
+        marker_13f093fd0a56413c8923e06a7359a749.bindPopup(popup_751a32ac879a45a3a4ef7a866b3034eb)
+        ;
+
+        
+    
+    
+            marker_13f093fd0a56413c8923e06a7359a749.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Fac de Droit
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2d46a7aca3254ff2b9edd70b52906a12 = L.marker(
+                [48.108765, -1.693432],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_ccd25e8519e24888bf56e72b3bbe3b73 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_2d46a7aca3254ff2b9edd70b52906a12.setIcon(custom_icon_ccd25e8519e24888bf56e72b3bbe3b73);
+        
+    
+        var popup_3c9042d35d52459a88ec8030b1b4de17 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ac2bfd2687c54c828ac416be844ee213 = $(`<div id="html_ac2bfd2687c54c828ac416be844ee213" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Chèques Postaux </h4></p><p><h5>Informations : </h5></p><p> 66 Mail François Mitterrand</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 24 </p><p> Nombre de places disponibles : 30</p> <p> Station la plus proche : Horizons à 441.2 mètres</p> </center></div>`)[0];
+            popup_3c9042d35d52459a88ec8030b1b4de17.setContent(html_ac2bfd2687c54c828ac416be844ee213);
+        
+
+        marker_2d46a7aca3254ff2b9edd70b52906a12.bindPopup(popup_3c9042d35d52459a88ec8030b1b4de17)
+        ;
+
+        
+    
+    
+            marker_2d46a7aca3254ff2b9edd70b52906a12.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Chèques Postaux
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e6f09925da0a4c8a9ec53d4ef2feda93 = L.marker(
+                [48.11817, -1.688466],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_0d3b663c1a8c4074b765dd0b6b5b0d01 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_e6f09925da0a4c8a9ec53d4ef2feda93.setIcon(custom_icon_0d3b663c1a8c4074b765dd0b6b5b0d01);
+        
+    
+        var popup_31faa6e14460485fadf15fb0aac83a00 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4cbe93767f4a4c24875f502e4e73ac24 = $(`<div id="html_4cbe93767f4a4c24875f502e4e73ac24" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Anatole France </h4></p><p><h5>Informations : </h5></p><p> 3 Avenue du 41ème Régiment d'Infanterie</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 14 </p><p> Nombre de places disponibles : 28</p> <p> Station la plus proche : Pontchaillou Métro à 486.5 mètres</p> </center></div>`)[0];
+            popup_31faa6e14460485fadf15fb0aac83a00.setContent(html_4cbe93767f4a4c24875f502e4e73ac24);
+        
+
+        marker_e6f09925da0a4c8a9ec53d4ef2feda93.bindPopup(popup_31faa6e14460485fadf15fb0aac83a00)
+        ;
+
+        
+    
+    
+            marker_e6f09925da0a4c8a9ec53d4ef2feda93.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Anatole France
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4c758e6da32e46618b8e7d04050921b8 = L.marker(
+                [48.110115, -1.670039],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_1eddcc4eb87c40f6bf733acb17658af6 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_4c758e6da32e46618b8e7d04050921b8.setIcon(custom_icon_1eddcc4eb87c40f6bf733acb17658af6);
+        
+    
+        var popup_0168dd54ceaf490e9858aa70a38f0082 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5cff32880e8d4c52a596a065f4690066 = $(`<div id="html_5cff32880e8d4c52a596a065f4690066" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Paul Bert </h4></p><p><h5>Informations : </h5></p><p> 9 Avenue Aristide Briand</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 4 </p><p> Nombre de places disponibles : 16</p> <p> Station la plus proche : Musée Beaux-Arts à 306.3 mètres</p> </center></div>`)[0];
+            popup_0168dd54ceaf490e9858aa70a38f0082.setContent(html_5cff32880e8d4c52a596a065f4690066);
+        
+
+        marker_4c758e6da32e46618b8e7d04050921b8.bindPopup(popup_0168dd54ceaf490e9858aa70a38f0082)
+        ;
+
+        
+    
+    
+            marker_4c758e6da32e46618b8e7d04050921b8.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Paul Bert
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fec916bf9bf8457aab8b4a8542f7e6e8 = L.marker(
+                [48.121481, -1.692737],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_1b8f9382c20642868c9e8729ccb29038 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_fec916bf9bf8457aab8b4a8542f7e6e8.setIcon(custom_icon_1b8f9382c20642868c9e8729ccb29038);
+        
+    
+        var popup_b91c7dc866674ad18fa93a0819f8a1ef = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5e4dd9fd37d24f7f90ed7d49052c7ea9 = $(`<div id="html_5e4dd9fd37d24f7f90ed7d49052c7ea9" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Pontchaillou Métro </h4></p><p><h5>Informations : </h5></p><p>  Chr Pontchaillou</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 7 </p><p> Nombre de places disponibles : 28</p> <p> Station la plus proche : Anatole France à 486.5 mètres</p> </center></div>`)[0];
+            popup_b91c7dc866674ad18fa93a0819f8a1ef.setContent(html_5e4dd9fd37d24f7f90ed7d49052c7ea9);
+        
+
+        marker_fec916bf9bf8457aab8b4a8542f7e6e8.bindPopup(popup_b91c7dc866674ad18fa93a0819f8a1ef)
+        ;
+
+        
+    
+    
+            marker_fec916bf9bf8457aab8b4a8542f7e6e8.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Pontchaillou Métro
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_691a7e7bef11419cb5115fdf8dd7b3c0 = L.marker(
+                [48.109926, -1.659499],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_da6b74b2d49b4ee5ad2b67eafc4b7d72 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_691a7e7bef11419cb5115fdf8dd7b3c0.setIcon(custom_icon_da6b74b2d49b4ee5ad2b67eafc4b7d72);
+        
+    
+        var popup_4233af1f1e42488a824bb28e17af0763 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d046bd7477c949abb614286bcd06797a = $(`<div id="html_d046bd7477c949abb614286bcd06797a" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Robidou </h4></p><p><h5>Informations : </h5></p><p> 124 Avenue Sergent Maginot</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 4 </p><p> Nombre de places disponibles : 20</p> <p> Station la plus proche : Pont de Strasbourg à 258.6 mètres</p> </center></div>`)[0];
+            popup_4233af1f1e42488a824bb28e17af0763.setContent(html_d046bd7477c949abb614286bcd06797a);
+        
+
+        marker_691a7e7bef11419cb5115fdf8dd7b3c0.bindPopup(popup_4233af1f1e42488a824bb28e17af0763)
+        ;
+
+        
+    
+    
+            marker_691a7e7bef11419cb5115fdf8dd7b3c0.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Robidou
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e30c43db7372440f825823e5a59239fa = L.marker(
+                [48.094986, -1.663731],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_b7be490180e642b896c908fab8173675 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_e30c43db7372440f825823e5a59239fa.setIcon(custom_icon_b7be490180e642b896c908fab8173675);
+        
+    
+        var popup_d2b68afedbc644028c2b21e9b7af2f3d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_169f43e2a5194721ba7c145f472b3b9d = $(`<div id="html_169f43e2a5194721ba7c145f472b3b9d" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Sainte-Thérèse </h4></p><p><h5>Informations : </h5></p><p> 76 Boulevard Emile Combes</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 4 </p><p> Nombre de places disponibles : 12</p> <p> Station la plus proche : Binquenais à 462.3 mètres</p> </center></div>`)[0];
+            popup_d2b68afedbc644028c2b21e9b7af2f3d.setContent(html_169f43e2a5194721ba7c145f472b3b9d);
+        
+
+        marker_e30c43db7372440f825823e5a59239fa.bindPopup(popup_d2b68afedbc644028c2b21e9b7af2f3d)
+        ;
+
+        
+    
+    
+            marker_e30c43db7372440f825823e5a59239fa.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Sainte-Thérèse
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2dd9a6550a694e5fa0a5f990443b3034 = L.marker(
+                [48.126795, -1.665101],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_3368631e31484fd4bcbca9ff214bc4ff = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_2dd9a6550a694e5fa0a5f990443b3034.setIcon(custom_icon_3368631e31484fd4bcbca9ff214bc4ff);
+        
+    
+        var popup_23709c31c4d14b7398aaaf0ba8409b5c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7f7f7cf5cfda4845b73fd6b9cf741870 = $(`<div id="html_7f7f7cf5cfda4845b73fd6b9cf741870" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Gros-Chêne </h4></p><p><h5>Informations : </h5></p><p> 204 Avenue Général George S. Patton</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 12 </p><p> Nombre de places disponibles : 18</p> <p> Station la plus proche : Painlevé à 541.8 mètres</p> </center></div>`)[0];
+            popup_23709c31c4d14b7398aaaf0ba8409b5c.setContent(html_7f7f7cf5cfda4845b73fd6b9cf741870);
+        
+
+        marker_2dd9a6550a694e5fa0a5f990443b3034.bindPopup(popup_23709c31c4d14b7398aaaf0ba8409b5c)
+        ;
+
+        
+    
+    
+            marker_2dd9a6550a694e5fa0a5f990443b3034.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Gros-Chêne
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cfd62a1bd08a4d909dd22ca6da2e0871 = L.marker(
+                [48.109859, -1.656028],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_6cc39f845dda4b87bbe87e12cae35bfd = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_cfd62a1bd08a4d909dd22ca6da2e0871.setIcon(custom_icon_6cc39f845dda4b87bbe87e12cae35bfd);
+        
+    
+        var popup_77ee632eebc7402486114eb86e0431b4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_855b5659770e4872bdeca8f3985c9fb7 = $(`<div id="html_855b5659770e4872bdeca8f3985c9fb7" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Pont de Strasbourg </h4></p><p><h5>Informations : </h5></p><p> 92 rue Alphonse Guérin</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 8 </p><p> Nombre de places disponibles : 20</p> <p> Station la plus proche : Robidou à 258.6 mètres</p> </center></div>`)[0];
+            popup_77ee632eebc7402486114eb86e0431b4.setContent(html_855b5659770e4872bdeca8f3985c9fb7);
+        
+
+        marker_cfd62a1bd08a4d909dd22ca6da2e0871.bindPopup(popup_77ee632eebc7402486114eb86e0431b4)
+        ;
+
+        
+    
+    
+            marker_cfd62a1bd08a4d909dd22ca6da2e0871.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Pont de Strasbourg
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_54c1e19d7fbf490bb60cd50658e473d9 = L.marker(
+                [48.11421, -1.680461],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_880502c3dd1b41079f2f73334eb30367 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_54c1e19d7fbf490bb60cd50658e473d9.setIcon(custom_icon_880502c3dd1b41079f2f73334eb30367);
+        
+    
+        var popup_0c786ee466684d98a4e4fd8c94caebd2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a0a33415d8d448738eac070f9870061f = $(`<div id="html_a0a33415d8d448738eac070f9870061f" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Sainte-Anne </h4></p><p><h5>Informations : </h5></p><p> 16 Place Sainte-Anne</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 13 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : Place Hoche à 269.9 mètres</p> </center></div>`)[0];
+            popup_0c786ee466684d98a4e4fd8c94caebd2.setContent(html_a0a33415d8d448738eac070f9870061f);
+        
+
+        marker_54c1e19d7fbf490bb60cd50658e473d9.bindPopup(popup_0c786ee466684d98a4e4fd8c94caebd2)
+        ;
+
+        
+    
+    
+            marker_54c1e19d7fbf490bb60cd50658e473d9.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Sainte-Anne
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5f365cef2a624d599e2967ed41c261dc = L.marker(
+                [48.105537, -1.674328],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_9e58fcbb37a34a04bc4d9a077f842f9f = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_5f365cef2a624d599e2967ed41c261dc.setIcon(custom_icon_9e58fcbb37a34a04bc4d9a077f842f9f);
+        
+    
+        var popup_494f683ce7a44523a29da1b0e4b281e6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_32bde4708ef1453b99e9dc1344523599 = $(`<div id="html_32bde4708ef1453b99e9dc1344523599" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Champs Libres </h4></p><p><h5>Informations : </h5></p><p> 7 Cours des Alliés</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 5 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : None à 5332619.3 mètres</p> </center></div>`)[0];
+            popup_494f683ce7a44523a29da1b0e4b281e6.setContent(html_32bde4708ef1453b99e9dc1344523599);
+        
+
+        marker_5f365cef2a624d599e2967ed41c261dc.bindPopup(popup_494f683ce7a44523a29da1b0e4b281e6)
+        ;
+
+        
+    
+    
+            marker_5f365cef2a624d599e2967ed41c261dc.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Champs Libres
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4736c51e695f4774af1c3b9d457c4161 = L.marker(
+                [48.105111, -1.677119],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_097e407174dd4b19a3df9138dfdbdd34 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_4736c51e695f4774af1c3b9d457c4161.setIcon(custom_icon_097e407174dd4b19a3df9138dfdbdd34);
+        
+    
+        var popup_821811cb99884cd2a83bf4d44927744f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_73236ebfba1e4fa28d3af8cb49e49edf = $(`<div id="html_73236ebfba1e4fa28d3af8cb49e49edf" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Charles de Gaulle </h4></p><p><h5>Informations : </h5></p><p> 2 Cours des Alliés</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 15 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : Champs Libres à 213.2 mètres</p> </center></div>`)[0];
+            popup_821811cb99884cd2a83bf4d44927744f.setContent(html_73236ebfba1e4fa28d3af8cb49e49edf);
+        
+
+        marker_4736c51e695f4774af1c3b9d457c4161.bindPopup(popup_821811cb99884cd2a83bf4d44927744f)
+        ;
+
+        
+    
+    
+            marker_4736c51e695f4774af1c3b9d457c4161.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Charles de Gaulle
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3957927e991949eaaa793127d603aa1e = L.marker(
+                [48.102015, -1.684015],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_a20aecc9cbca4e55ae53b025010809cb = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_3957927e991949eaaa793127d603aa1e.setIcon(custom_icon_a20aecc9cbca4e55ae53b025010809cb);
+        
+    
+        var popup_ab4f314de067470db81e9970181c2e54 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ef8238696afc4b26a04df439ca21fa2f = $(`<div id="html_ef8238696afc4b26a04df439ca21fa2f" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Pont de Nantes </h4></p><p><h5>Informations : </h5></p><p> 32 Rue du Docteur Francis Joly</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 11 </p><p> Nombre de places disponibles : 20</p> <p> Station la plus proche : Cité Judiciaire à 306.5 mètres</p> </center></div>`)[0];
+            popup_ab4f314de067470db81e9970181c2e54.setContent(html_ef8238696afc4b26a04df439ca21fa2f);
+        
+
+        marker_3957927e991949eaaa793127d603aa1e.bindPopup(popup_ab4f314de067470db81e9970181c2e54)
+        ;
+
+        
+    
+    
+            marker_3957927e991949eaaa793127d603aa1e.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Pont de Nantes
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf9c78f45ff54309a5fa668a435fc709 = L.marker(
+                [48.106653, -1.68677],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_d87fb7a9bf42418ab51ec5fd8617f7c1 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_cf9c78f45ff54309a5fa668a435fc709.setIcon(custom_icon_d87fb7a9bf42418ab51ec5fd8617f7c1);
+        
+    
+        var popup_45cb612595f544668b8981a910bc2af7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_eac727ce4a774aa19fc2febdd7f78e5c = $(`<div id="html_eac727ce4a774aa19fc2febdd7f78e5c" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> La Rotonde </h4></p><p><h5>Informations : </h5></p><p> 2 Rue de Redon</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 7 </p><p> Nombre de places disponibles : 20</p> <p> Station la plus proche : Cité Judiciaire à 288.2 mètres</p> </center></div>`)[0];
+            popup_45cb612595f544668b8981a910bc2af7.setContent(html_eac727ce4a774aa19fc2febdd7f78e5c);
+        
+
+        marker_cf9c78f45ff54309a5fa668a435fc709.bindPopup(popup_45cb612595f544668b8981a910bc2af7)
+        ;
+
+        
+    
+    
+            marker_cf9c78f45ff54309a5fa668a435fc709.bindTooltip(
+                `<div>
+                     Information sur la station de vélos La Rotonde
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c7d0484083224c4497b9036c5948c4df = L.marker(
+                [48.10524, -1.698107],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_e3aa535d299f4e2390c8ad8c8bec183c = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_c7d0484083224c4497b9036c5948c4df.setIcon(custom_icon_e3aa535d299f4e2390c8ad8c8bec183c);
+        
+    
+        var popup_175a7f96d78f4f9fa79f0293264abebc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_109159184d554c5f83896029e6e78715 = $(`<div id="html_109159184d554c5f83896029e6e78715" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Voltaire </h4></p><p><h5>Informations : </h5></p><p> 56 Boulevard Voltaire</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 7 </p><p> Nombre de places disponibles : 16</p> <p> Station la plus proche : Chèques Postaux à 524.2 mètres</p> </center></div>`)[0];
+            popup_175a7f96d78f4f9fa79f0293264abebc.setContent(html_109159184d554c5f83896029e6e78715);
+        
+
+        marker_c7d0484083224c4497b9036c5948c4df.bindPopup(popup_175a7f96d78f4f9fa79f0293264abebc)
+        ;
+
+        
+    
+    
+            marker_c7d0484083224c4497b9036c5948c4df.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Voltaire
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8006d2bcc72b4692ba5e55156c63ecf2 = L.marker(
+                [48.113009, -1.693264],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_eb49593ad72a441cbcec7e31afd67d03 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_8006d2bcc72b4692ba5e55156c63ecf2.setIcon(custom_icon_eb49593ad72a441cbcec7e31afd67d03);
+        
+    
+        var popup_09eb9ecb9bc145248a761b6db9c72a68 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0367df1bac8d441799092f0552a2dfac = $(`<div id="html_0367df1bac8d441799092f0552a2dfac" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Brest - Verdun </h4></p><p><h5>Informations : </h5></p><p> 2 Boulevard de Verdun</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 12 </p><p> Nombre de places disponibles : 18</p> <p> Station la plus proche : Horizons à 331.9 mètres</p> </center></div>`)[0];
+            popup_09eb9ecb9bc145248a761b6db9c72a68.setContent(html_0367df1bac8d441799092f0552a2dfac);
+        
+
+        marker_8006d2bcc72b4692ba5e55156c63ecf2.bindPopup(popup_09eb9ecb9bc145248a761b6db9c72a68)
+        ;
+
+        
+    
+    
+            marker_8006d2bcc72b4692ba5e55156c63ecf2.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Brest - Verdun
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_89324c5b89d1472d9204cdb65a08b721 = L.marker(
+                [48.111749, -1.702077],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_ddc6752115d448a599dcc35268439926 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_89324c5b89d1472d9204cdb65a08b721.setIcon(custom_icon_ddc6752115d448a599dcc35268439926);
+        
+    
+        var popup_c88c8cca4854449c98d2fa2e196f38cd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9be1398fde5d4e8083f0b878a29d1e64 = $(`<div id="html_9be1398fde5d4e8083f0b878a29d1e64" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Marbeuf </h4></p><p><h5>Informations : </h5></p><p> 37 Rue Louis Guilloux</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 13 </p><p> Nombre de places disponibles : 20</p> <p> Station la plus proche : Berger à 555.2 mètres</p> </center></div>`)[0];
+            popup_c88c8cca4854449c98d2fa2e196f38cd.setContent(html_9be1398fde5d4e8083f0b878a29d1e64);
+        
+
+        marker_89324c5b89d1472d9204cdb65a08b721.bindPopup(popup_c88c8cca4854449c98d2fa2e196f38cd)
+        ;
+
+        
+    
+    
+            marker_89324c5b89d1472d9204cdb65a08b721.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Marbeuf
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_805b6f169f0b4f73b80010a5b1e22de1 = L.marker(
+                [48.10305, -1.66209],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_e34dc4bab7e64c70bf365c8a1b7db853 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_805b6f169f0b4f73b80010a5b1e22de1.setIcon(custom_icon_e34dc4bab7e64c70bf365c8a1b7db853);
+        
+    
+        var popup_923c350d63e0467b96973604f745fb60 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8cf07fdda8984e37a7f41cd967ca752b = $(`<div id="html_8cf07fdda8984e37a7f41cd967ca752b" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Pierre Martin </h4></p><p><h5>Informations : </h5></p><p> 119 Rue Saint-Hélier</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 13 </p><p> Nombre de places disponibles : 20</p> <p> Station la plus proche : Laënnec à 505.0 mètres</p> </center></div>`)[0];
+            popup_923c350d63e0467b96973604f745fb60.setContent(html_8cf07fdda8984e37a7f41cd967ca752b);
+        
+
+        marker_805b6f169f0b4f73b80010a5b1e22de1.bindPopup(popup_923c350d63e0467b96973604f745fb60)
+        ;
+
+        
+    
+    
+            marker_805b6f169f0b4f73b80010a5b1e22de1.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Pierre Martin
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cde619917d1443dbb5b97983ecd35889 = L.marker(
+                [48.128788, -1.698129],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_c49a6ac7409545e483e13521f904fb2c = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_cde619917d1443dbb5b97983ecd35889.setIcon(custom_icon_c49a6ac7409545e483e13521f904fb2c);
+        
+    
+        var popup_e024a3399a7c44d98b0d398030d4be0d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_adeb9fa8063e4c0f818814f37f402c2f = $(`<div id="html_adeb9fa8063e4c0f818814f37f402c2f" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Cucillé </h4></p><p><h5>Informations : </h5></p><p> 14 Avenue de Cucillé</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 15 </p><p> Nombre de places disponibles : 25</p> <p> Station la plus proche : Préfecture à 307.2 mètres</p> </center></div>`)[0];
+            popup_e024a3399a7c44d98b0d398030d4be0d.setContent(html_adeb9fa8063e4c0f818814f37f402c2f);
+        
+
+        marker_cde619917d1443dbb5b97983ecd35889.bindPopup(popup_e024a3399a7c44d98b0d398030d4be0d)
+        ;
+
+        
+    
+    
+            marker_cde619917d1443dbb5b97983ecd35889.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Cucillé
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e4973d40e382495b82a2cf1082a75821 = L.marker(
+                [48.097533, -1.674307],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_922c7e273e454498beb6b1c17efc47d3 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_e4973d40e382495b82a2cf1082a75821.setIcon(custom_icon_922c7e273e454498beb6b1c17efc47d3);
+        
+    
+        var popup_25db5e7b8f764d9b8f6caa9e8cc0b083 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ebc2fe7cd60e45c090acdde36bdcb457 = $(`<div id="html_ebc2fe7cd60e45c090acdde36bdcb457" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Jacques Cartier </h4></p><p><h5>Informations : </h5></p><p> 155 Boulevard Jacques Cartier</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 10 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : Clemenceau à 471.8 mètres</p> </center></div>`)[0];
+            popup_25db5e7b8f764d9b8f6caa9e8cc0b083.setContent(html_ebc2fe7cd60e45c090acdde36bdcb457);
+        
+
+        marker_e4973d40e382495b82a2cf1082a75821.bindPopup(popup_25db5e7b8f764d9b8f6caa9e8cc0b083)
+        ;
+
+        
+    
+    
+            marker_e4973d40e382495b82a2cf1082a75821.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Jacques Cartier
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e8088e63e24c4e41ae5b1e5079165cb2 = L.marker(
+                [48.091594, -1.667321],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_45262947ded7432580551a72efb88b57 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_e8088e63e24c4e41ae5b1e5079165cb2.setIcon(custom_icon_45262947ded7432580551a72efb88b57);
+        
+    
+        var popup_e083b75c8a6f41bc9b02f4d08e6ade4e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8e9a4482e4ea4637b0cf9a8805896ab6 = $(`<div id="html_8e9a4482e4ea4637b0cf9a8805896ab6" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Binquenais </h4></p><p><h5>Informations : </h5></p><p> 24 Rue André Rouault</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 5 </p><p> Nombre de places disponibles : 16</p> <p> Station la plus proche : Sainte-Thérèse à 462.3 mètres</p> </center></div>`)[0];
+            popup_e083b75c8a6f41bc9b02f4d08e6ade4e.setContent(html_8e9a4482e4ea4637b0cf9a8805896ab6);
+        
+
+        marker_e8088e63e24c4e41ae5b1e5079165cb2.bindPopup(popup_e083b75c8a6f41bc9b02f4d08e6ade4e)
+        ;
+
+        
+    
+    
+            marker_e8088e63e24c4e41ae5b1e5079165cb2.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Binquenais
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ab23cda044e74d7eaa4ce9cb2537ccf4 = L.marker(
+                [48.122994, -1.660547],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_9786be7cf6ce48f5beeb3f8ef1711cde = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_ab23cda044e74d7eaa4ce9cb2537ccf4.setIcon(custom_icon_9786be7cf6ce48f5beeb3f8ef1711cde);
+        
+    
+        var popup_39494d75ee764b0f8bfafe76f9d993b9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d6d2c1b1d0404c8aaa4d94ff8f2ccc34 = $(`<div id="html_d6d2c1b1d0404c8aaa4d94ff8f2ccc34" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Painlevé </h4></p><p><h5>Informations : </h5></p><p> 197 Rue de Fougères</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 5 </p><p> Nombre de places disponibles : 18</p> <p> Station la plus proche : Gros-Chêne à 541.8 mètres</p> </center></div>`)[0];
+            popup_39494d75ee764b0f8bfafe76f9d993b9.setContent(html_d6d2c1b1d0404c8aaa4d94ff8f2ccc34);
+        
+
+        marker_ab23cda044e74d7eaa4ce9cb2537ccf4.bindPopup(popup_39494d75ee764b0f8bfafe76f9d993b9)
+        ;
+
+        
+    
+    
+            marker_ab23cda044e74d7eaa4ce9cb2537ccf4.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Painlevé
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_00935408e9f34f76b901f77480cec2e0 = L.marker(
+                [48.102055, -1.673959],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_a1c541166adc4647b773f5f2570bcf6c = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_00935408e9f34f76b901f77480cec2e0.setIcon(custom_icon_a1c541166adc4647b773f5f2570bcf6c);
+        
+    
+        var popup_4ce870eb0f5b4cf9899d97d58b199aea = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2bbfc4a30c2f427da4586edccdd4b870 = $(`<div id="html_2bbfc4a30c2f427da4586edccdd4b870" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Gare Sud </h4></p><p><h5>Informations : </h5></p><p> 9 C rue de Châtillon</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 5 </p><p> Nombre de places disponibles : 13</p> <p> Station la plus proche : Gares - Solférino à 321.4 mètres</p> </center></div>`)[0];
+            popup_4ce870eb0f5b4cf9899d97d58b199aea.setContent(html_2bbfc4a30c2f427da4586edccdd4b870);
+        
+
+        marker_00935408e9f34f76b901f77480cec2e0.bindPopup(popup_4ce870eb0f5b4cf9899d97d58b199aea)
+        ;
+
+        
+    
+    
+            marker_00935408e9f34f76b901f77480cec2e0.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Gare Sud
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92ae57ce6dbb4e7ea62a06da5bfa8993 = L.marker(
+                [48.109601, -1.67408],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_2c4dae9b182d411ab062344116f4b9d9 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_92ae57ce6dbb4e7ea62a06da5bfa8993.setIcon(custom_icon_2c4dae9b182d411ab062344116f4b9d9);
+        
+    
+        var popup_82b9b2e085e049758d2635cf6c996647 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_835c1024fdbc4de8820d39c4f8013091 = $(`<div id="html_835c1024fdbc4de8820d39c4f8013091" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Musée Beaux-Arts </h4></p><p><h5>Informations : </h5></p><p> 3 Avenue Jean Janvier</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 10 </p><p> Nombre de places disponibles : 16</p> <p> Station la plus proche : TNB à 207.9 mètres</p> </center></div>`)[0];
+            popup_82b9b2e085e049758d2635cf6c996647.setContent(html_835c1024fdbc4de8820d39c4f8013091);
+        
+
+        marker_92ae57ce6dbb4e7ea62a06da5bfa8993.bindPopup(popup_82b9b2e085e049758d2635cf6c996647)
+        ;
+
+        
+    
+    
+            marker_92ae57ce6dbb4e7ea62a06da5bfa8993.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Musée Beaux-Arts
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_29fcd5242d7441b99f0129e34cae6f23 = L.marker(
+                [48.106846, -1.665814],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_eb76f0d616ac4d5cb626d6eb2bd6e53d = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_29fcd5242d7441b99f0129e34cae6f23.setIcon(custom_icon_eb76f0d616ac4d5cb626d6eb2bd6e53d);
+        
+    
+        var popup_f40d2f42c8254651aa8ca44f71a08b24 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e6ead208762c4e8bb3fda46a4c1a5d2a = $(`<div id="html_e6ead208762c4e8bb3fda46a4c1a5d2a" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Laënnec </h4></p><p><h5>Informations : </h5></p><p> 11 Boulevard René Théophile Hyacinthe Laënnec</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 14 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : Pont de Châteaudun à 393.5 mètres</p> </center></div>`)[0];
+            popup_f40d2f42c8254651aa8ca44f71a08b24.setContent(html_e6ead208762c4e8bb3fda46a4c1a5d2a);
+        
+
+        marker_29fcd5242d7441b99f0129e34cae6f23.bindPopup(popup_f40d2f42c8254651aa8ca44f71a08b24)
+        ;
+
+        
+    
+    
+            marker_29fcd5242d7441b99f0129e34cae6f23.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Laënnec
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3de36808ad5944bc8d28f46d580260a7 = L.marker(
+                [48.104162, -1.671005],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_265ad34850564d9f9d40fbf190cf33dd = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_3de36808ad5944bc8d28f46d580260a7.setIcon(custom_icon_265ad34850564d9f9d40fbf190cf33dd);
+        
+    
+        var popup_dfc04910ead046fdb870699770a6bac2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aa2f705658c34d8b88c72fe7ac65007d = $(`<div id="html_aa2f705658c34d8b88c72fe7ac65007d" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Gares - Solférino </h4></p><p><h5>Informations : </h5></p><p> 4 Boulevard Solférino</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 13 </p><p> Nombre de places disponibles : 34</p> <p> Station la plus proche : None à 5332456.7 mètres</p> </center></div>`)[0];
+            popup_dfc04910ead046fdb870699770a6bac2.setContent(html_aa2f705658c34d8b88c72fe7ac65007d);
+        
+
+        marker_3de36808ad5944bc8d28f46d580260a7.bindPopup(popup_dfc04910ead046fdb870699770a6bac2)
+        ;
+
+        
+    
+    
+            marker_3de36808ad5944bc8d28f46d580260a7.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Gares - Solférino
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_45d3d25bc2a546d49a650467b085fea3 = L.marker(
+                [48.11355, -1.661853],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_f8887bf1e40d4bde8712d0f36814adf9 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_45d3d25bc2a546d49a650467b085fea3.setIcon(custom_icon_f8887bf1e40d4bde8712d0f36814adf9);
+        
+    
+        var popup_a6208127629c4e65a6147f860312eba0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dd1f4972d7024717a5fce5071e2b1b41 = $(`<div id="html_dd1f4972d7024717a5fce5071e2b1b41" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Oberthur </h4></p><p><h5>Informations : </h5></p><p> 4 Rue Gutenberg</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 10 </p><p> Nombre de places disponibles : 30</p> <p> Station la plus proche : Metz - Sévigné à 381.4 mètres</p> </center></div>`)[0];
+            popup_a6208127629c4e65a6147f860312eba0.setContent(html_dd1f4972d7024717a5fce5071e2b1b41);
+        
+
+        marker_45d3d25bc2a546d49a650467b085fea3.bindPopup(popup_a6208127629c4e65a6147f860312eba0)
+        ;
+
+        
+    
+    
+            marker_45d3d25bc2a546d49a650467b085fea3.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Oberthur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a0d82368220b4fb7be6c8f93671ba34a = L.marker(
+                [48.1097, -1.684041],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_776d4b87599245b0bac5e4755753dffc = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_a0d82368220b4fb7be6c8f93671ba34a.setIcon(custom_icon_776d4b87599245b0bac5e4755753dffc);
+        
+    
+        var popup_8a586783b9e24456a05c1fcb6247affa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4a9a69c6ca494b0689a2943a3ef1033f = $(`<div id="html_4a9a69c6ca494b0689a2943a3ef1033f" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Place de Bretagne </h4></p><p><h5>Informations : </h5></p><p> 3 Place de Bretagne</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 12 </p><p> Nombre de places disponibles : 39</p> <p> Station la plus proche : Les Lices à 348.9 mètres</p> </center></div>`)[0];
+            popup_8a586783b9e24456a05c1fcb6247affa.setContent(html_4a9a69c6ca494b0689a2943a3ef1033f);
+        
+
+        marker_a0d82368220b4fb7be6c8f93671ba34a.bindPopup(popup_8a586783b9e24456a05c1fcb6247affa)
+        ;
+
+        
+    
+    
+            marker_a0d82368220b4fb7be6c8f93671ba34a.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Place de Bretagne
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_88b0bd3072b740dc9d2ce070e44b9d4d = L.marker(
+                [48.110264, -1.664443],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_41f19a0fbded462b943052ae0cef3ed3 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_88b0bd3072b740dc9d2ce070e44b9d4d.setIcon(custom_icon_41f19a0fbded462b943052ae0cef3ed3);
+        
+    
+        var popup_9abdc483aa11484a837dfe37a9b205b5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_db7ec033c4194117970e8c2a5d2777d6 = $(`<div id="html_db7ec033c4194117970e8c2a5d2777d6" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Pont de Châteaudun </h4></p><p><h5>Informations : </h5></p><p> 65 Avenue Aristide Briand</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 4 </p><p> Nombre de places disponibles : 20</p> <p> Station la plus proche : Robidou à 370.1 mètres</p> </center></div>`)[0];
+            popup_9abdc483aa11484a837dfe37a9b205b5.setContent(html_db7ec033c4194117970e8c2a5d2777d6);
+        
+
+        marker_88b0bd3072b740dc9d2ce070e44b9d4d.bindPopup(popup_9abdc483aa11484a837dfe37a9b205b5)
+        ;
+
+        
+    
+    
+            marker_88b0bd3072b740dc9d2ce070e44b9d4d.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Pont de Châteaudun
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f9452354fcc4f529df81304566e9e10 = L.marker(
+                [48.112461, -1.643674],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_107f34318a514d6fbe548182107accba = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_6f9452354fcc4f529df81304566e9e10.setIcon(custom_icon_107f34318a514d6fbe548182107accba);
+        
+    
+        var popup_9068606294904f3d81d5f40982a4bb83 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3176bafce4614cdc9f10cdc045389e37 = $(`<div id="html_3176bafce4614cdc9f10cdc045389e37" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Plaine de Baud </h4></p><p><h5>Informations : </h5></p><p>  Avenue François Château</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 9 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : Beaulieu Chimie à 854.3 mètres</p> </center></div>`)[0];
+            popup_9068606294904f3d81d5f40982a4bb83.setContent(html_3176bafce4614cdc9f10cdc045389e37);
+        
+
+        marker_6f9452354fcc4f529df81304566e9e10.bindPopup(popup_9068606294904f3d81d5f40982a4bb83)
+        ;
+
+        
+    
+    
+            marker_6f9452354fcc4f529df81304566e9e10.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Plaine de Baud
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1a513368223949e890b3fdded030684e = L.marker(
+                [48.116458, -1.633875],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_fdc9c93533e2411b8bf97747107c470c = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_1a513368223949e890b3fdded030684e.setIcon(custom_icon_fdc9c93533e2411b8bf97747107c470c);
+        
+    
+        var popup_1d40c6355b6a465c9efaba83c0c64b5d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0a04faec92114ed3925421afb5ab1b31 = $(`<div id="html_0a04faec92114ed3925421afb5ab1b31" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Beaulieu Chimie </h4></p><p><h5>Informations : </h5></p><p>  Allée de Beaulieu</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 7 </p><p> Nombre de places disponibles : 30</p> <p> Station la plus proche : Beaulieu Restau U à 705.9 mètres</p> </center></div>`)[0];
+            popup_1d40c6355b6a465c9efaba83c0c64b5d.setContent(html_0a04faec92114ed3925421afb5ab1b31);
+        
+
+        marker_1a513368223949e890b3fdded030684e.bindPopup(popup_1d40c6355b6a465c9efaba83c0c64b5d)
+        ;
+
+        
+    
+    
+            marker_1a513368223949e890b3fdded030684e.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Beaulieu Chimie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c438739dfd18423282bdfa6f9201d653 = L.marker(
+                [48.122048, -1.638368],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_9cb61b889064484db9305621c7d8e89a = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_c438739dfd18423282bdfa6f9201d653.setIcon(custom_icon_9cb61b889064484db9305621c7d8e89a);
+        
+    
+        var popup_4a1b5c486272472ebc1acb82c32fefc9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f48d56f0b35f44849d65525a47864bc4 = $(`<div id="html_f48d56f0b35f44849d65525a47864bc4" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Beaulieu Restau U </h4></p><p><h5>Informations : </h5></p><p> 41 Avenue des Buttes de Coësmes</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 10 </p><p> Nombre de places disponibles : 18</p> <p> Station la plus proche : Beaulieu Chimie à 705.9 mètres</p> </center></div>`)[0];
+            popup_4a1b5c486272472ebc1acb82c32fefc9.setContent(html_f48d56f0b35f44849d65525a47864bc4);
+        
+
+        marker_c438739dfd18423282bdfa6f9201d653.bindPopup(popup_4a1b5c486272472ebc1acb82c32fefc9)
+        ;
+
+        
+    
+    
+            marker_c438739dfd18423282bdfa6f9201d653.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Beaulieu Restau U
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf41952fc5a74fa58eb155e3ddf922e2 = L.marker(
+                [48.087282, -1.644121],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_5930db04f4cb4ecd8d968586f04a4e94 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_cf41952fc5a74fa58eb155e3ddf922e2.setIcon(custom_icon_5930db04f4cb4ecd8d968586f04a4e94);
+        
+    
+        var popup_a6d0da1f0b684182936b688973ea64d7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9bc9881711cb4b458acc0c7e127800f8 = $(`<div id="html_9bc9881711cb4b458acc0c7e127800f8" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> La Poterie </h4></p><p><h5>Informations : </h5></p><p> 211 Rue de Vern</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 13 </p><p> Nombre de places disponibles : 28</p> <p> Station la plus proche : Sainte-Thérèse à 1693.5 mètres</p> </center></div>`)[0];
+            popup_a6d0da1f0b684182936b688973ea64d7.setContent(html_9bc9881711cb4b458acc0c7e127800f8);
+        
+
+        marker_cf41952fc5a74fa58eb155e3ddf922e2.bindPopup(popup_a6d0da1f0b684182936b688973ea64d7)
+        ;
+
+        
+    
+    
+            marker_cf41952fc5a74fa58eb155e3ddf922e2.bindTooltip(
+                `<div>
+                     Information sur la station de vélos La Poterie
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3728c749ea8e4c4c8601f00c1e7e808b = L.marker(
+                [48.099043, -1.694512],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_412fd6703b724c778d764af1b5886837 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_3728c749ea8e4c4c8601f00c1e7e808b.setIcon(custom_icon_412fd6703b724c778d764af1b5886837);
+        
+    
+        var popup_2cd87f7eb20140f8a6cf81696eb1c65b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b17dce1a1d6649a096bbc5821a11ede9 = $(`<div id="html_b17dce1a1d6649a096bbc5821a11ede9" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> La Courrouze </h4></p><p><h5>Informations : </h5></p><p>  Rue Claude Bernard</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 7 </p><p> Nombre de places disponibles : 20</p> <p> Station la plus proche : Voltaire à 739.3 mètres</p> </center></div>`)[0];
+            popup_2cd87f7eb20140f8a6cf81696eb1c65b.setContent(html_b17dce1a1d6649a096bbc5821a11ede9);
+        
+
+        marker_3728c749ea8e4c4c8601f00c1e7e808b.bindPopup(popup_2cd87f7eb20140f8a6cf81696eb1c65b)
+        ;
+
+        
+    
+    
+            marker_3728c749ea8e4c4c8601f00c1e7e808b.bindTooltip(
+                `<div>
+                     Information sur la station de vélos La Courrouze
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4da505614a5448009cfc6465b1656a25 = L.marker(
+                [48.129277, -1.675501],
+                {}
+            ).addTo(map_78f7bfcb9fd2408d95d1b9c0a2277c39);
+        
+    
+        var custom_icon_107aba270cd948408a0777a36b3978b1 = L.icon({"iconSize": [30, 30], "iconUrl": "https://www.android-logiciels.fr/wp-content/uploads/2014/07/Paris-Velib-icone-1.png"});
+        marker_4da505614a5448009cfc6465b1656a25.setIcon(custom_icon_107aba270cd948408a0777a36b3978b1);
+        
+    
+        var popup_5e2231c65d834e2da9cf5eb45805d0df = L.popup({"maxWidth": "100%"});
+
+        
+            var html_051346d604de4b00baa67950550d5479 = $(`<div id="html_051346d604de4b00baa67950550d5479" style="width: 100.0%; height: 100.0%;"><center><p style='width: 16em; height: auto;'><h4> Armorique </h4></p><p><h5>Informations : </h5></p><p>  Rue de la Taurellerie</p><p><strong> Etat : En fonctionnement </strong></p><p>Nombre  de vélos disponibles actuellement : 10 </p><p> Nombre de places disponibles : 24</p> <p> Station la plus proche : Gros-Chêne à 821.9 mètres</p> </center></div>`)[0];
+            popup_5e2231c65d834e2da9cf5eb45805d0df.setContent(html_051346d604de4b00baa67950550d5479);
+        
+
+        marker_4da505614a5448009cfc6465b1656a25.bindPopup(popup_5e2231c65d834e2da9cf5eb45805d0df)
+        ;
+
+        
+    
+    
+            marker_4da505614a5448009cfc6465b1656a25.bindTooltip(
+                `<div>
+                     Information sur la station de vélos Armorique
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
