@@ -1,0 +1,21 @@
+header {
+	grid-area: header;
+}
+
+nav {
+	grid-area: nav;
+}
+
+article {
+	grid-area: article;
+} 
+
+
+body {
+	display: grid;
+	grid-template-rows: 5rem auto;
+	grid-template-columns: 5rem auto;
+	grid-template-areas:
+	'header nav'
+	'article article';
+}

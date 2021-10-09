@@ -1,0 +1,47 @@
+header {
+	grid-area: header;
+}
+
+nav {
+	grid-area: nav;
+}
+
+aside {
+	grid-area: aside;
+}
+
+#sedeplacer {
+	grid-area: sedeplacer;
+}
+
+#chiffres {
+	grid-area: chiffres;
+}
+
+#apropos {
+	grid-area: apropos;
+}
+
+#contact {
+	grid-area: contact;
+}
+
+footer {
+	grid-area: footer;
+}
+
+
+body {
+	display: grid;
+	grid-template-rows: 5rem auto auto auto auto auto auto;
+	grid-template-columns: 5rem auto;
+	grid-template-areas:
+	'header nav'
+	'aside aside'
+	'sedeplacer sedeplacer'
+	'apropos apropos'
+	'chiffres chiffres'
+	'contact contact'
+	'footer footer';
+}
+

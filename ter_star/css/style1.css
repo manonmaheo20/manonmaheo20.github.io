@@ -1,0 +1,251 @@
+/* MISE EN PAGE DE LA PAGE D'ACCUEIL */
+
+aside img {
+    display: block; /* Propriétés de l'image du bus du début */
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}  
+
+header {
+    position: sticky; /* Pour qu'on voit le logo au dessus de l'image du bus du début */
+    top: 0; /* Pour que le logo de la STAR soit direct en haut */
+    z-index: +1; /* Pour que le logo STAR se voit au dessus de l'image du bus du début */
+}
+
+nav, ul {
+    position: sticky; /* Pour que l'on voit le menu même en défilant la page */
+    top: 0; /* Pour que le menu soit direct en haut */
+    z-index:+1; /* Pour que le menu se voit au dessus de l'image du bus du début */
+}
+
+#contact{
+    margin: 2% 7%; /* Pour que la legende et l'image CONTACT ne soit pas collé au bandeau */
+}
+
+footer {
+    background-color: #4C525B; /* Fond gris du footer */
+    color: white; /* Texte en blanc */
+    padding: 0 3rem; /* Espacement à gauche du bloc footer */
+    font-family: 'Montserrat', sans-serif; /* Police du texte */
+}
+
+mark {
+    color: white; 
+    background-color: #FFBB00;
+}
+
+
+/* MENU HORIZONTAL DE LA PAGE D'ACCUEIL */
+
+nav {
+    background-color: #008383; /* Pour que tous le menu soit de couleur vert */
+}
+
+
+nav ul {
+    position: relative; /* pour que le block soit "positionné" différemment de static */
+    display: inline-block; /* pour que le ul ne prenne pas forcément toute la ligne */
+    padding: 0; /* supprimer les marges interne des ul (car indentation des listes = marge gauche par défaut) */  
+    float: right;  
+}
+
+nav li{
+    display: inline-block;  /* inline pour que les li de 1er niveau soient sur une ligne = menu horizontal */
+                            /* inline-block pour pouvoir les redimensionner plus bas ! */ 
+}
+
+nav ul ul li {
+    display: block;   /* Pour que les li des niveaux suivants déroulent verticalement */
+}
+
+nav ul ul {
+    display: none;     /* Pour masquer les niveaux inférieurs */
+}
+
+nav li:hover > ul {
+    position: absolute;  /* Pour que la sous-liste soit hors flux = en plus, sans déplacer le reste */
+    display: block;         /* ul de niveaux inférieurs sous forme de block */
+    z-index: +1;             /* Pour s'assurer que les sous-menus soient affichés "au dessous" */
+}
+
+/* Mise en forme des éléments de menus (les "boutons") */
+
+nav li {
+    list-style-type: none;  /* Pas de puces */
+    width: 14em; /* Taille des étiquettes */
+    height: 2em; 
+    line-height: 2em; /* Adapte la ligne de la ligne à la hauteur de la boite ==> centrage */   
+}
+
+nav li {
+    background-color: #008383;  /* Pour que le fond soit vert canard et que l'on voit bien les noms des pages */
+}
+
+nav a:link, a:visited {
+    text-decoration: none;  /* Supprimer le soulignement des liens */
+    color: white; /* Texte en blanc */
+    font-family: 'Lato', sans-serif; /* Texte avec la police Lato */
+    font-size: medium;
+}
+
+nav a:hover {
+    color: #FFBB00; /* Pour que lorsqu'on survol les liens, la couleur du texte est orange */
+}
+
+/* Rendre tout le bouton cliquable */
+
+nav li > a {       
+    display: block; /* Pour que ça marche si on clique sur le texte ou à côté */
+    padding: 0 1em; /* Padding sur les côtés pour que le texte ne touche pas la boite */
+}
+
+/* BLOC SE DEPLACER DE LA PAGE D'ACCUEIL*/ 
+
+img[alt="Se déplacer dans Rennes"]{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sedeplacer{
+    margin: 0px 50px 50px 50px;
+}
+
+.premierdiv {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.deuxiemediv {
+    width: 20%;
+    float: none;
+    background-color: #EAECEE;
+    display: table-cell; 
+    border: solid white 10px;
+}
+
+img[alt="photo"]{
+  width : 100%;
+  height : 200px;
+  margin-bottom : 20px;
+
+}
+
+.deuxiemediv h3{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #008383;
+}
+
+.deuxiemediv p{
+    font-family: 'Montserrat', sans-serif;
+    color: #17202A;
+    text-align: justify;
+    padding-left: 1em;
+    padding-right: 1em;
+    line-height: 25px;
+}
+
+#sedeplacer a:link{
+    text-decoration: none;  
+    color: #008383; 
+}
+
+#sedeplacer a:visited{
+    color: #008383;
+}
+
+/* BLOC A PROPOS DE LA PAGE D'ACCUEIL*/
+
+#apropos{
+    background-color: white;
+    text-align: left;
+}
+
+.propos{
+    text-align: justify;
+    margin: 0 3em 0em 4em;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+/* BANDEAU AVEC LES CHIFFRES DE LA PAGE D'ACCUEIL */
+
+#chiffres{
+    background-color: #FFBB00;
+    font-family: 'Lato', sans-serif;
+    margin-top: 50px;
+}
+
+table,td,th{
+    border: 2px white solid;
+    border-top: none;
+    border-bottom: none;
+    columns-width: 100%;
+    padding: 0 10px;
+}
+
+tr:first-child{
+    color: white;
+    font-size: 3em;
+}
+
+tr:last-child{
+    color: #2A2C31;
+    font-size: 1.5em;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 30px 30%;
+}
+
+td, th {
+    text-align: center;
+}
+
+/*Pour ne pas avoir de bordures à droite et à gauche, on met de la même couleur que le fond*/
+
+.pasBordure{
+    border-left: 2px #FFBB00 solid;
+}
+
+.pasBordure2{
+    border-right: 2px #FFBB00 solid;
+}
+
+
+/* TEXTE SUR IMAGE DE DEBUT */
+
+.overlay{
+    position: relative;
+	width:100%;
+}
+
+.imgbus{
+    display: block;
+	width: 100%;
+	height:auto;
+}
+
+.texteSURimg{
+    position: absolute;
+    color: white;
+	font-size: 70px;
+	line-height: 1.5em;
+	text-align: center;
+	top: 30%;
+	left: 50%;
+	width:100%;
+	transform: translate(-50%, -50%);
+	font-family: 'Lato', sans-serif;
+}
+
+.imgDESSUS{
+    padding-top: 3em;
+    position:absolute;
+	top: 50%;
+	right:45%;
+	width:10%;
+}

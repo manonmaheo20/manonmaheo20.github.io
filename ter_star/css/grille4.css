@@ -1,0 +1,43 @@
+header {
+	grid-area: header;
+}
+
+nav {
+	grid-area: nav;
+}
+
+#graphique {
+	grid-area: graphique;
+} 
+
+#complement {
+	grid-area: complement;
+}
+
+#photo {
+	grid-area: photo;
+}
+
+#texte {
+	grid-area: texte;
+}
+
+#titre {
+	grid-area: titre;
+}
+
+#aside {
+	grid-area: aside;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 5rem auto auto auto auto;
+	grid-template-columns: 5rem 45rem auto;
+	grid-template-areas:
+	'header nav nav'
+	'titre titre titre'
+	'graphique graphique complement'
+	'aside aside photo'
+	'texte texte texte';
+}
